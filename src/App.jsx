@@ -15,7 +15,7 @@ function App() {
         Hi
         <Home />
         <Routes>
-          <Route exact path="/JC-Website/" element={<Home />} />
+          <Route path="/JC-Website/" element={<Home />} />
           <Route path="/supporter" element={<Supporter />} />
           <Route path="/products" element={<Products />}>
             <Route path=":id" element={<Product />} />
