@@ -12,6 +12,7 @@ function App() {
   return (
     <>
       <div>
+        Hi
         <Home />
         {/* <Routes>
           <Route exact path="/" element={<Home />} />
