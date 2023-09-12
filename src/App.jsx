@@ -15,7 +15,7 @@ function App() {
     <>
       Hi
       <Home />
-      <Routes>
+      {/* <Routes>
         <Navbar />
         <Route exact path="/JC-Website/" element={<Home />} />
         <Route path="/supporter" element={<Supporter />} />
@@ -23,7 +23,7 @@ function App() {
           <Route path=":id" element={<Product />} />
         </Route>
         <Route path="/about-us" element={<About />} />
-      </Routes>
+      </Routes> */}
       <Footer />
     </>
   );
