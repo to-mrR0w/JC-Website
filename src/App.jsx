@@ -4,8 +4,6 @@ import About from "./pages/About";
 import Supporter from "./pages/Supporter";
 import Products from "./pages/Products";
 import Product from "./pages/Product";
-import Footer from "./components/Footer";
-
 import Home from "./pages/Home";
 
 import { Routes, Route } from "react-router-dom";
@@ -13,18 +11,16 @@ import Navbar from "./components/Navbar";
 function App() {
   return (
     <>
-      Hi
       <Home />
-      {/* <Routes>
-        <Navbar />
+      <Navbar />
+      <Routes>
         <Route exact path="/JC-Website/" element={<Home />} />
-        <Route path="/supporter" element={<Supporter />} />
-        <Route path="/products" element={<Products />}>
+        <Route path="/JC-Website/supporter" element={<Supporter />} />
+        <Route path="/JC-Website/products" element={<Products />}>
           <Route path=":id" element={<Product />} />
         </Route>
-        <Route path="/about-us" element={<About />} />
-      </Routes> */}
-      <Footer />
+        <Route path="/JC-Website/about-us" element={<About />} />
+      </Routes>
     </>
   );
 }
