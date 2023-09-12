@@ -1,0 +1,16 @@
+@import url(./Navbar.css);
+
+:root {
+  --Überschrift1: 50px;
+  --fontfamily: Arial, Helvetica, sans-serif;
+  --backgroundcolor1: #0f222e;
+  --backgroundcolor2: #1a1a1a;
+  --backgroundcolor3: #0d0d0d;
+  --backgroundcolorLabel: #1a1a1a;
+  --primarycolor: white;
+  --secondarycolor: rgb(58, 58, 58);
+  --thirdcolor: rgba(19, 219, 219, 0.849);
+  --fourthcolor: lightcyan;
+  --fontsizePatient: 22px;
+  --widthPatientButton: 250px;
+}

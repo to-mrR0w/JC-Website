@@ -11,10 +11,9 @@ import Navbar from "./components/Navbar";
 function App() {
   return (
     <>
-      <Home />
       <Navbar />
       <Routes>
-        <Route exact path="/JC-Website/" element={<Home />} />
+        <Route exact path="/JC-Website" element={<Home />} />
         <Route path="/JC-Website/supporter" element={<Supporter />} />
         <Route path="/JC-Website/products" element={<Products />}>
           <Route path=":id" element={<Product />} />

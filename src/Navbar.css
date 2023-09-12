@@ -1,0 +1,41 @@
+.navbar {
+  color: black;
+  margin-top: 0px;
+  margin-left: 1em;
+  margin-right: 1em;
+  font-size: 30px;
+}
+.navbarh1 {
+  font-size: var(--Überschrift1);
+}
+.navbar_ul {
+  display: flex;
+  /* background-color: white; */
+}
+.navbar_li {
+  /* background-color: var(--backgroundcolorLabel); */
+  text-decoration: none;
+  list-style: none;
+  margin: 1px;
+  padding: 5px;
+  border-radius: 2px;
+}
+
+.navbar_li:hover {
+  color: black;
+  cursor: pointer;
+  transition: 0.4s;
+  border: 0.01em;
+  border-style: ridge;
+  border-left: 0;
+  border-right: 0;
+  /* border: 5px; */
+  border-color: black;
+}
+.navbar a {
+  color: inherit;
+}
+
+.navbar_li:active {
+  transform: scale(0.98);
+}
