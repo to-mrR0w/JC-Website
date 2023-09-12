@@ -1,10 +1,11 @@
 // import { useLocation } from "react-router-dom";
-// import About from "./pages/About";
-// import Supporter from "./pages/Supporter";
-// import Products from "./pages/Products";
-// import Product from "./pages/Product";
-// import Footer from "./components/Footer";
 // import Header from "./components/Header";
+import About from "./pages/About";
+import Supporter from "./pages/Supporter";
+import Products from "./pages/Products";
+import Product from "./pages/Product";
+import Footer from "./components/Footer";
+
 import Home from "./pages/Home";
 
 // import { Routes, Route } from "react-router-dom";
@@ -14,7 +15,7 @@ function App() {
       <div>
         Hi
         <Home />
-        {/* <Routes>
+        <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/supporter" element={<Supporter />} />
           <Route path="/products" element={<Products />}>
@@ -22,7 +23,7 @@ function App() {
           </Route>
           <Route path="/about-us" element={<About />} />
         </Routes>
-        <Footer /> */}
+        <Footer />
       </div>
     </>
   );
