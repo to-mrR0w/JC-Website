@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 
 import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
 function App() {
   return (
     <>
@@ -16,6 +17,7 @@ function App() {
         Hi
         <Home />
         <Routes>
+          <Navbar />
           <Route exact path="/" element={<Home />} />
           <Route path="/supporter" element={<Supporter />} />
           <Route path="/products" element={<Products />}>
