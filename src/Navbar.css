@@ -1,4 +1,4 @@
-.navbar {
+/* .navbar {
   color: black;
   margin-top: 0px;
   margin-left: 1em;
@@ -11,7 +11,7 @@
 .navbar_ul {
   display: flex;
   /* background-color: white; */
-}
+/* } */
 .navbar_li {
   /* background-color: var(--backgroundcolorLabel); */
   text-decoration: none;
@@ -32,10 +32,44 @@
   /* border: 5px; */
   border-color: black;
 }
-.navbar a {
+*/ .navbar a {
   color: inherit;
 }
 
 .navbar_li:active {
   transform: scale(0.98);
+}
+/* Reset default margin and padding for the entire page */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the navigation bar */
+nav {
+  background-color: #333; /* Background color of the navbar */
+}
+
+.navbar {
+  list-style-type: none; /* Remove the default list bullet */
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Hide overflowing elements */
+}
+
+.navbar li {
+  float: left; /* Float the list items to create a horizontal navbar */
+}
+
+.navbar li a {
+  display: block;
+  color: #fff; /* Text color for navbar links */
+  text-align: center;
+  padding: 14px 16px; /* Spacing around each link */
+  text-decoration: none; /* Remove underlines from links */
+}
+
+/* Change the link color on hover */
+.navbar li a:hover {
+  background-color: #555; /* Background color on hover */
 }

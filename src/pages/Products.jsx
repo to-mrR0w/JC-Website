@@ -1,5 +1,11 @@
 function Products() {
-  return <div></div>;
+  return (
+    <div>
+      <ul>
+        <li>Boxing</li>
+      </ul>
+    </div>
+  );
 }
 
 export default Products;
