@@ -3,13 +3,17 @@
 @tailwind utilities;
 @import url(./Navbar.css);
 @import url(./Home.css);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --Überschrift1: 50px;
   --fontfamily: Arial, Helvetica, sans-serif;
   --backgroundcolor1: #0f222e;
   --backgroundcolor2: #1a1a1a;
   --backgroundcolor3: #0d0d0d;
-  --backgroundcolorLabel: #1a1a1a;
+  --backgroundcolorLabel: #1as1a1a;
   --primarycolor: white;
   --secondarycolor: rgb(58, 58, 58);
   --thirdcolor: rgba(19, 219, 219, 0.849);
