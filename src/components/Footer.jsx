@@ -1,5 +1,9 @@
 function Footer() {
-  return <div></div>;
+  return (
+    <div>
+      <p>Contact: easycharger@gmail.com</p>
+    </div>
+  );
 }
 
 export default Footer;

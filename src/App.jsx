@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 function App() {
   return (
     <>
@@ -20,6 +21,7 @@ function App() {
         </Route>
         <Route path="/JC-Website/about-us" element={<About />} />
       </Routes>
+      <Footer />
     </>
   );
 }
