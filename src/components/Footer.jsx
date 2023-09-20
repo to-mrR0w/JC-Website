@@ -1,8 +1,8 @@
 function Footer() {
   return (
-    <div>
+    <footer>
       <p>Contact: easycharger@gmail.com</p>
-    </div>
+    </footer>
   );
 }
 
