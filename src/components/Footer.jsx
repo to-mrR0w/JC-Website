@@ -1,7 +1,7 @@
 function Footer() {
   return (
-    <footer>
-      <p>Contact: easycharger@gmail.com</p>
+    <footer className="fixed bottom-0">
+      <p className="justify-center">Contact: easycharger@gmail.com</p>
     </footer>
   );
 }
