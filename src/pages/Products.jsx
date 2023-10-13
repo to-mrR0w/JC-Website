@@ -2,7 +2,7 @@ function Products() {
   return (
     <div>
       <ul>
-        <li>Boxing</li>
+        <li>No problems anymore with a messy backpack</li>
       </ul>
     </div>
   );
