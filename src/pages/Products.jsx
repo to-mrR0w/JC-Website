@@ -4,12 +4,14 @@ function Products() {
   return (
     <>
       {DATA.map((produkt) => (
-        <Produkte
-          key={produkt.id}
-          nameP={produkt.name}
-          preis={produkt.price}
-          img={produkt.productImg}
-        />
+        <>
+          <Produkte
+            id={produkt.id}
+            nameP={produkt.name}
+            preis={produkt.price}
+            img={produkt.productImg}
+          />
+        </>
       ))}
     </>
   );
