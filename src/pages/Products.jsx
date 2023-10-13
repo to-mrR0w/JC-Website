@@ -1,10 +1,17 @@
+import Produkte from "../components/Produkte.jsx";
+import { DATA } from "../products.js";
 function Products() {
   return (
-    <div>
-      <ul>
-        <li>No problems anymore with a messy backpack</li>
-      </ul>
-    </div>
+    <>
+      {DATA.map((produkt) => (
+        <Produkte
+          key={produkt.id}
+          nameP={produkt.name}
+          preis={produkt.price}
+          img={produkt.productImg}
+        />
+      ))}
+    </>
   );
 }
 
