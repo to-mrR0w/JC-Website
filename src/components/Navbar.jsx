@@ -10,23 +10,23 @@ function Navbar() {
   return (
     <>
       {Dropdown && <Sidebar />}
-      <nav className="navbar">
-        <ul className="navbar_ul navbar flex list-none m-0 p-0 overflow-hidden">
+      <nav className="flex list-none m-0 p-0 overflow-hidden   text-white ">
+        <ul className="flex list-none m-0 p-0 overflow-hidden">
           <li className={`${Dropdown ? "text-green-600" : "text-red-400"}`}>
             <Icon_3lines setDropdown={setDropdown} Dropdown={Dropdown} />
           </li>
-          <li className="navbar_li">
+          <li className="block text-white text-center py-5 px-4 no-underline">
             <Link to="/JC-Website/">Home</Link>
           </li>
-          <li className="navbar_li">
+          <li className="block text-white text-center py-5 px-4 no-underline">
             <Link to="/JC-Website/products">Products</Link>
           </li>
-          <li className="navbar_li">
+          <li className="block text-white text-center py-5 px-4 no-underline">
             <Link to="/JC-Website/about-us">About-us</Link>
           </li>
-          <li className="navbar-li float-left">
+          <li className="block text-white text-center py-2 px-4 no-underline ">
             <Link
-              className="block text-white text-center py-2 px-4 no-underline"
+              className="block text-center py-2 px-4 no-underline"
               to="/JC-Website/cart"
             >
               <ShoppingCart />
