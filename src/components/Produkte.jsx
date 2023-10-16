@@ -6,8 +6,8 @@ function Produkte(props) {
   const { addCart, cartItems } = useContext(ShopContext);
   const cartItemsAmount = cartItems[id];
   return (
-    <div>
-      <ul>
+    <div className="">
+      <ul className="">
         <li key={id}>
           <img key={"Image"} src={img} alt={`Picture:${img}`} />
           <span key={"Name"}>{nameP}</span>
