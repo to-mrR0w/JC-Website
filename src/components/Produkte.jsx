@@ -9,7 +9,7 @@ function Produkte(props) {
     <div>
       <ul>
         <li key={id}>
-          <img key={"Image"} src={img} />
+          <img key={"Image"} src={img} alt={`Picture:${img}`} />
           <span key={"Name"}>{nameP}</span>
           <br />
           <span key={"Preis"}> Preis:{preis}</span>
