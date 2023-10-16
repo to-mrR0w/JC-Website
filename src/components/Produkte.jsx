@@ -16,7 +16,7 @@ function Produkte(props) {
           <br />
           <button key={"Add"} onClick={() => addCart(id)} className="">
             Hinzufügen zum Einkaufwagen
-            {cartItemsAmount > 0 && <>{cartItemsAmount}</>}
+            {cartItemsAmount > 0 && <>({cartItemsAmount})</>}
           </button>
         </li>
       </ul>
