@@ -5,12 +5,7 @@ function Products() {
     <div className="justify-center flex gap-32">
       {DATA.map((produkt) => (
         <>
-          <Produkte
-            id={produkt.id}
-            nameP={produkt.name}
-            preis={produkt.price}
-            img={produkt.productImg}
-          />
+          <Produkte data={produkt} />
         </>
       ))}
     </div>

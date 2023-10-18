@@ -1,32 +1,51 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import { DATA } from "../products";
+
 const ShopContext = createContext(null);
 
 const getDefaultCart = () => {
   let cart = {};
-  for (let i = 1; i < DATA.length; i++) {
-    cart[i] = 0;
+  for (let i = 0; i < DATA.length; i++) {
+    cart[DATA[i].id] = 0;
   }
   return cart;
 };
 
 function ShopContextProvider(props) {
   const [cartItems, setCartItems] = useState(getDefaultCart());
-
+  const getTotal = () => {
+    let totalA = 0;
+    for (const item in cartItems) {
+      if (cartItems[item] > 0) {
+        let itemInfo = DATA.find((product) => product.id === Number(item));
+        totalA += cartItems[item] * itemInfo.price;
+      }
+    }
+    return totalA;
+  };
+  const updateCart = (newAmount, itemID) => {
+    setCartItems((prev) => ({ ...prev, [itemID]: newAmount }));
+  };
   const addCart = (itemID) => {
     setCartItems((prev) => ({ ...prev, [itemID]: prev[itemID] + 1 }));
   };
 
-  console.log(cartItems);
-
   const removeFromCart = (itemID) => {
-    setCartItems;
-    (prev) => ({ ...prev, [itemID]: prev[itemID] - 1 });
+    setCartItems((prev) => ({ ...prev, [itemID]: prev[itemID] - 1 }));
   };
+
+  useEffect(() => {
+    console.log(cartItems);
+    console.log(DATA);
+  }, [cartItems]);
+
   return (
-    <ShopContext.Provider value={{ cartItems, addCart, removeFromCart }}>
+    <ShopContext.Provider
+      value={{ cartItems, addCart, removeFromCart, updateCart, getTotal }}
+    >
       {props.children}
     </ShopContext.Provider>
   );
 }
+
 export { ShopContextProvider, ShopContext };
