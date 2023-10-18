@@ -23,7 +23,11 @@ function Cart() {
       </div>
       <div className="checkout">
         {" "}
-        <p>Subtotal: {getTotala}</p>
+        {getTotala > 0 ? (
+          <p>Subtotal: {getTotala}</p>
+        ) : (
+          <h1 className="text-2xl">Empty Cart</h1>
+        )}
         <button onClick={() => navigate("/JC-Website/")}> Continue </button>
         <button> Checkout</button>
       </div>
