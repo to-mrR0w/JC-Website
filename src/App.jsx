@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 import Cart from "./pages/cart/cart";
 import { IconContext } from "phosphor-react";
 import { ShopContextProvider } from "./context/ShopContext";
+import Signup from "./pages/Signup";
 function App() {
   return (
     <ShopContextProvider>
@@ -31,6 +32,7 @@ function App() {
             <Route path="/JC-Website/cart" element={<Cart />} />
             <Route path="/JC-Website/products" element={<Products />}></Route>
             <Route path="/JC-Website/about-us" element={<About />} />
+            <Route path="/JC-Website/login" element={<Signup />} />
           </Routes>
           <Footer />
         </>
