@@ -39,22 +39,26 @@ function Navbar() {
               About-us
             </Link>
           </li>
-          <li className="group justify-end">
-            <Link
-              className="inline-block text-white text-center py-5 px-4 no-underline transition duration-400 border border-solid border-ridge border-t-0 border-l-0 border-r-0 border-b-0 border-transparent hover:text-black hover:border-black hover:bg-gray-500 cursor-pointer"
-              to="/JC-Website/cart"
-            >
-              <ShoppingCart />
-            </Link>
+        </ul>
+      </nav>
+      <div className="ml-auto block float-right">
+        <ul className="flex list-none m-0 p-0 overflow-hidden">
+          <li className="group ">
             <Link
               className="inline-block text-white text-center py-5 px-4 no-underline transition duration-400 border border-solid border-ridge border-t-0 border-l-0 border-r-0 border-b-0 border-transparent hover:text-black hover:border-black hover:bg-gray-500 cursor-pointer"
               to="/JC-Website/login"
             >
               <button>Login</button>
             </Link>
+            <Link
+              className="inline-block text-white text-center py-5 px-4 no-underline transition duration-400 border border-solid border-ridge border-t-0 border-l-0 border-r-0 border-b-0 border-transparent hover:text-black hover:border-black hover:bg-gray-500 cursor-pointer"
+              to="/JC-Website/cart"
+            >
+              <ShoppingCart />
+            </Link>
           </li>
         </ul>
-      </nav>
+      </div>
     </>
   );
 }
