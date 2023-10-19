@@ -46,6 +46,12 @@ function Navbar() {
             >
               <ShoppingCart />
             </Link>
+            <Link
+              className="inline-block text-white text-center py-5 px-4 no-underline transition duration-400 border border-solid border-ridge border-t-0 border-l-0 border-r-0 border-b-0 border-transparent hover:text-black hover:border-black hover:bg-gray-500 cursor-pointer"
+              to="/JC-Website/login"
+            >
+              <button>Login</button>
+            </Link>
           </li>
         </ul>
       </nav>
