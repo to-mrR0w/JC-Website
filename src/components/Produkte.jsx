@@ -8,11 +8,11 @@ function Produkte(props) {
   const { addCart, cartItems } = useContext(ShopContext);
   const cartItemsAmount = cartItems[id];
   return (
-    <div className="product border rounded-lg w-64 md:w-72 h-72 p-6 m-4 flex flex-col justify-center items-center">
+    <div className="product border rounded-lg w-64 md:w-80 h-95 p-6 m-4 flex flex-col justify-center items-center">
       <ul className="">
         <li key={`Liste${id}`}>
           <img
-            className="w-64 md:w-72"
+            className=""
             key={`Image${id}`}
             src={productImg}
             alt={`Picture:${productImg}`}
@@ -21,9 +21,10 @@ function Produkte(props) {
             <span className="" key={`Name${id}`}>
               {name}
             </span>
+            <br />
             <span className="" key={`Preis${id}`}>
               {" "}
-              Preis:{price}
+              Preis: {price}
             </span>
           </div>
 

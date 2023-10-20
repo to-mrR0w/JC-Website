@@ -13,7 +13,7 @@ function Home() {
         ipsum dolor sit amet.
       </section>
       <div className="image">
-        <img src="../../dist/untitled.png" alt="Bild" />
+        <img src="../assets/1.jpg" alt="Bild" />
       </div>
     </div>
   );
