@@ -34,11 +34,6 @@ function ShopContextProvider(props) {
     setCartItems((prev) => ({ ...prev, [itemID]: prev[itemID] - 1 }));
   };
 
-  useEffect(() => {
-    console.log(cartItems);
-    console.log(DATA);
-  }, [cartItems]);
-
   return (
     <ShopContext.Provider
       value={{ cartItems, addCart, removeFromCart, updateCart, getTotal }}
