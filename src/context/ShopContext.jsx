@@ -19,6 +19,7 @@ function ShopContextProvider(props) {
       if (cartItems[item] > 0) {
         let itemInfo = DATA.find((product) => product.id === Number(item));
         totalA += cartItems[item] * itemInfo.price;
+        totalA = totalA.toFixed(2);
       }
     }
     return totalA;

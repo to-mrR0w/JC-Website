@@ -18,13 +18,13 @@ function Produkte(props) {
             alt={`Picture:${productImg}`}
           />
           <div className="description text-center mt-4">
-            <span className="" key={`Name${id}`}>
+            <span className="text-3xl" key={`Name${id}`}>
               {name}
             </span>
             <br />
-            <span className="" key={`Preis${id}`}>
+            <span className="text-lg" key={`Preis${id}`}>
               {" "}
-              Preis: {price}
+              <b>Preis: </b> {price}
             </span>
           </div>
 
