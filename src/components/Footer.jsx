@@ -1,6 +1,5 @@
 import { InstagramLogo, YoutubeLogo } from "phosphor-react";
 import "./Footer.css";
-import Icon_3lines from "./Icon_3lines";
 
 function Footer() {
   return (
