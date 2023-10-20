@@ -4,9 +4,9 @@ import Sidebar from "./Sidebar";
 import Icon_3lines from "./Icon_3lines";
 import { ShoppingCart } from "phosphor-react";
 
-function Navbar() {
+function Navbar(props) {
   const [Dropdown, setDropdown] = useState(false);
-
+  const { signInWithEmail } = props;
   return (
     <>
       {Dropdown && <Sidebar />}
@@ -47,7 +47,9 @@ function Navbar() {
                 className="block text-white text-center py-5 px-4 no-underline transition duration-400 border border-solid border-ridge border-t-0 border-l-0 border-r-0 border-b-0 border-transparent hover:text-black hover:border-black hover:bg-gray-500 cursor-pointer"
                 to="/JC-Website/login"
               >
-                <button className="">Login</button>
+                <button onClick={signInWithEmail} className="">
+                  Login
+                </button>
               </Link>
             </li>
             <li className="group">

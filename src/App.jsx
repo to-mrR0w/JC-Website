@@ -34,9 +34,27 @@ firebase.initializeApp({
   measurementId: "G-N3L8LXFMJX",
 });
 
-const auth = firebase.auth();
-const firestore = firebase.firestore();
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
+const auth = getAuth();
+
+
 function App() {
+  const [user] = useAuthState(auth);
+  
+  createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed up 
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
+  }
+
   return (
     <ShopContextProvider>
       <IconContext.Provider
@@ -48,7 +66,7 @@ function App() {
         }}
       >
         <>
-          <Navbar />
+          <Navbar signInWithEmail={createUserWithEmailAndPassword} />
           <Routes>
             <Route exact path="/JC-Website" element={<Home />} />
             <Route path="/JC-Website/supporter" element={<Supporter />} />
