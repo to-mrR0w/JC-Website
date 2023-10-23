@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import "./cart.css";
 import { ShopContext } from "../../context/ShopContext";
+import { FaAngleDown, FaAngleUp, FaTimes } from "react-icons/fa";
 const CartItem = (props) => {
   const { cartItems, addCart, removeFromCart, updateCart } =
     useContext(ShopContext);
@@ -18,12 +19,18 @@ const CartItem = (props) => {
         <p>{price}</p>
       </div>
       <div className="countHandler">
-        <button onClick={() => removeFromCart(id)}> - </button>
+        {" "}
+        <button onClick={() => addCart(id)}>
+          {" "}
+          <FaAngleUp />{" "}
+        </button>
         <input
           value={cartItems[id]}
           onChange={(e) => updateCart(Number(e.target.value), id)}
         />
-        <button onClick={() => addCart(id)}> + </button>
+        <button onClick={() => removeFromCart(id)}>
+          {cartItems[id] === 1 ? <FaTimes /> : <FaAngleDown />}
+        </button>
       </div>
     </div>
   );
