@@ -1,11 +1,5 @@
-
 function FirebaseContext() {
-
-    return (
-        <div>
-            
-        </div>
-    )
+  return <div></div>;
 }
 
-export {FirebaseContext} 
+export { FirebaseContext };
