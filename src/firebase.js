@@ -6,19 +6,19 @@ import { getPerformance } from "firebase/performance";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDiRny5IutBfQhVflLaKYayT43qAVHuQ2E",
+  apiKey: "AIzaSyAnF9zd51tuKsRqPOce62NonL3-ENwuEm4",
 
-  authDomain: "jc-1-1a2bb.firebaseapp.com",
+  authDomain: "juniorcompany-3d32e.firebaseapp.com",
 
-  projectId: "jc-1-1a2bb",
+  projectId: "juniorcompany-3d32e",
 
-  storageBucket: "jc-1-1a2bb.appspot.com",
+  storageBucket: "juniorcompany-3d32e.appspot.com",
 
-  messagingSenderId: "813684989963",
+  messagingSenderId: "491429369776",
 
-  appId: "1:813684989963:web:302a869979194216ec670e",
+  appId: "1:491429369776:web:824d1f078c9abab01ca875",
 
-  measurementId: "G-N3L8LXFMJX",
+  measurementId: "G-64MEMJQ51H",
 };
 
 const app = initializeApp(firebaseConfig);

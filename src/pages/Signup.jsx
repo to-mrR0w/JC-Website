@@ -23,7 +23,16 @@ function Signup() {
       mail.trim().lenght() !== 0
     ) {
       console.log(1234);
-      await createUserWithEmailAndPassword(auth, mail, password);
+      await createUserWithEmailAndPassword(auth, mail, password)
+        .then((userCredential) => {
+          // User signed up
+          var user = userCredential.user;
+
+          // ...
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     }
   }
   return (
