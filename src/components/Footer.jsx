@@ -9,8 +9,12 @@ function Footer() {
       </div>
       <div className="social-media">
         <div className="icon-container">
-          <InstagramLogo />
-          <YoutubeLogo />
+          <p>
+            <InstagramLogo />
+          </p>
+          <p>
+            <YoutubeLogo />
+          </p>
         </div>
       </div>
       <p className="justify-center">Contact: easycharger@gmail.com</p>
