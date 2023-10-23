@@ -3,7 +3,7 @@ import "./Footer.css";
 
 function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer   ">
       <div className="footer-logo">
         <img src="" alt="" />
       </div>

@@ -1,4 +1,4 @@
-import Newslette from "../components/Newsletter/newslette";
+// import Newslette from "../components/Newsletter/newslette";
 function Home() {
   return (
     <>
@@ -18,7 +18,7 @@ function Home() {
           <img src="../assets/1.jpg" alt="Bild" />
         </div>
       </div>{" "}
-      <Newslette />
+      {/* <Newslette /> */}
     </>
   );
 }
