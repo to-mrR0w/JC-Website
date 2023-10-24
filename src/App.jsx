@@ -13,32 +13,35 @@ import Cart from "./pages/cart/cart";
 import { IconContext } from "phosphor-react";
 import { ShopContextProvider } from "./context/ShopContext";
 import Signup from "./pages/Signup";
+import { FirebaseContext } from "./context/FirebaseContext";
 
 function App() {
   return (
-    <ShopContextProvider>
-      <IconContext.Provider
-        value={{
-          color: "limegreen",
-          size: 32,
-          weight: "bold",
-          mirrored: false,
-        }}
-      >
-        <>
-          <Navbar />
-          <Routes>
-            <Route exact path="/JC-Website" element={<Home />} />
-            <Route path="/JC-Website/supporter" element={<Supporter />} />
-            <Route path="/JC-Website/cart" element={<Cart />} />
-            <Route path="/JC-Website/products" element={<Products />}></Route>
-            <Route path="/JC-Website/about-us" element={<About />} />
-            <Route path="/JC-Website/login" element={<Signup />} />
-          </Routes>
-          <Footer />
-        </>
-      </IconContext.Provider>
-    </ShopContextProvider>
+    <FirebaseContext>
+      <ShopContextProvider>
+        <IconContext.Provider
+          value={{
+            color: "limegreen",
+            size: 32,
+            weight: "bold",
+            mirrored: false,
+          }}
+        >
+          <>
+            <Navbar />
+            <Routes>
+              <Route exact path="/JC-Website" element={<Home />} />
+              <Route path="/JC-Website/supporter" element={<Supporter />} />
+              <Route path="/JC-Website/cart" element={<Cart />} />
+              <Route path="/JC-Website/products" element={<Products />}></Route>
+              <Route path="/JC-Website/about-us" element={<About />} />
+              <Route path="/JC-Website/login" element={<Signup />} />
+            </Routes>
+            <Footer />
+          </>
+        </IconContext.Provider>
+      </ShopContextProvider>
+    </FirebaseContext>
   );
 }
 
