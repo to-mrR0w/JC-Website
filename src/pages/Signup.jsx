@@ -1,6 +1,6 @@
-import { useContext, useState } from "react";
-import { useUserAuth } from "../context/FirebaseContext";
-
+import { useState } from "react";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase";
 function Signup() {
   const { signUp } = useUserAuth();
   const [mail, setMail] = useState("");
@@ -14,9 +14,7 @@ function Signup() {
     e.preventDefault();
     setPassword(e.target.value);
   };
-  async function signc(e) {
-    e.preventDefault()
-
+  async function signc() {
     if (
       mail !== null ||
       password !== null ||
@@ -50,6 +48,7 @@ function Signup() {
         ></input>
       </div>
       <button onClick={() => signc}>Continue</button>
+      <button onClick={() => signinwithgoogle}> SIgn in with Google</button>
       <p>
         Login{" "}
         <a className="text-blue-600" href="/">
