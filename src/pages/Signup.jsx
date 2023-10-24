@@ -1,9 +1,10 @@
-import { useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase";
+import { useContext, useState } from "react";
+import { useUserAuth } from "../context/FirebaseContext";
+
 function Signup() {
-  const [mail, setMail] = useState(null);
-  const [password, setPassword] = useState(null);
+  const { signUp } = useUserAuth();
+  const [mail, setMail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleMail = (e) => {
     e.preventDefault();
@@ -13,7 +14,9 @@ function Signup() {
     e.preventDefault();
     setPassword(e.target.value);
   };
-  async function signc() {
+  async function signc(e) {
+    e.preventDefault()
+
     if (
       mail !== null ||
       password !== null ||
@@ -22,18 +25,11 @@ function Signup() {
       password.trim().lenght() !== 0 ||
       mail.trim().lenght() !== 0
     ) {
-      console.log(1234);
-      await createUserWithEmailAndPassword(auth, mail, password)
-        .then((userCredential) => {
-          // User signed up
-          var user = userCredential.user;
-
-          // ...
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }
+      try {
+        await signUp(mail, password)
+      } catch (error) {
+        console.log(error)
+      }
   }
   return (
     <div>
