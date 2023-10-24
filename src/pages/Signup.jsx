@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { useUserAuth } from "../context/FirebaseContext";
+import { UseUserAuth } from "../context/FirebaseContext";
 
 function Signup() {
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
-  const { signUp } = useUserAuth();
+  const { signUp, signUpwithGoogle } = UseUserAuth();
 
   const handleMail = (e) => {
     e.preventDefault();
@@ -15,21 +15,13 @@ function Signup() {
     setPassword(e.target.value);
   };
   async function signc() {
-    if (
-      mail !== null ||
-      password !== null ||
-      mail !== "" ||
-      password !== "" ||
-      password.trim().lenght() !== 0 ||
-      mail.trim().lenght() !== 0
-    ) {
-      try {
-        await signUp(mail, password);
-      } catch (error) {
-        console.log(error);
-      }
+    try {
+      await signUp(mail, password);
+    } catch (error) {
+      console.log(error);
     }
   }
+
   return (
     <div>
       <div className="Signup-container">
@@ -49,7 +41,8 @@ function Signup() {
         ></input>
       </div>
       <button onClick={() => signc}>Continue</button>
-      {/* <button onClick={() => signinwithgoogle}> SIgn in with Google</button> */}
+      <br />
+      <button onClick={signUpwithGoogle}> SIgn in with Google</button>
       <p>
         Login{" "}
         <a className="text-blue-600" href="/">

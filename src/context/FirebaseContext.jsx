@@ -5,18 +5,52 @@ import {
   signInWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
+  GoogleAuthProvider,
+  signInWithPopup,
 } from "firebase/auth";
-import { auth } from "../firebase";
 import { useEffect } from "react";
 import { useState } from "react";
-const UserAuthContext = createContext();
-function FirebaseContext({ children }) {
+import { auth } from "../config/firebase";
+
+const UserAuthContext = createContext(null);
+function FirebaseContext(props) {
+  const { children } = props;
   const [user, setUser] = useState("");
+  const [isAuth, setIsAuth] = useState("");
   function signUp(email, password) {
     return createUserWithEmailAndPassword(auth, email, password);
   }
   function login(email, password) {
     return signInWithEmailAndPassword(auth, email, password);
+  }
+  const Logout = async () => {
+    // Sign out user if authenticated
+    console.log("Logging out user");
+
+    try {
+      await signOut(auth);
+
+      // Clear state
+      setIsAuth(false);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+  async function signUpwithGoogle() {
+    console.log("Authenticating user");
+
+    const provider = new GoogleAuthProvider();
+
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+
+      // Set to state
+      setIsAuth(true);
+      console.log(user);
+    } catch (err) {
+      console.error(err);
+    }
   }
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -27,12 +61,14 @@ function FirebaseContext({ children }) {
     };
   }, []);
   return (
-    <UserAuthContext.Provider value={{ signUp, signOut, user, login }}>
+    <UserAuthContext.Provider
+      value={{ Logout, signUp, signOut, user, login, isAuth, signUpwithGoogle }}
+    >
       {children}
     </UserAuthContext.Provider>
   );
 }
-function useUserAuth() {
+const UseUserAuth = () => {
   return useContext(UserAuthContext);
-}
-export { FirebaseContext, useUserAuth };
+};
+export { FirebaseContext, UseUserAuth };

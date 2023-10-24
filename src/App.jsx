@@ -21,7 +21,7 @@ function App() {
       <ShopContextProvider>
         <IconContext.Provider
           value={{
-            color: "limegreen",
+            color: "grey",
             size: 32,
             weight: "bold",
             mirrored: false,
