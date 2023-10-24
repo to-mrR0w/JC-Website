@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { auth } from "../firebase";
+import firebase from "firebase/app";
 function Signup() {
   const [mail, setMail] = useState(null);
   const [password, setPassword] = useState(null);
@@ -13,6 +14,12 @@ function Signup() {
     e.preventDefault();
     setPassword(e.target.value);
   };
+
+  const signinwithgoogle = async () => {
+    const provider = new firebase.auth.GoogleProvider();
+    auth.signInWithPopup(provider);
+  };
+
   async function signc() {
     if (
       mail !== null ||
@@ -54,6 +61,7 @@ function Signup() {
         ></input>
       </div>
       <button onClick={() => signc}>Continue</button>
+      <button onClick={() => signinwithgoogle}> SIgn in with Google</button>
       <p>
         Login{" "}
         <a className="text-blue-600" href="/">
