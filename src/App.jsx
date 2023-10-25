@@ -13,6 +13,7 @@ import Cart from "./pages/cart/cart";
 import { IconContext } from "phosphor-react";
 import { ShopContextProvider } from "./context/ShopContext";
 import Signup from "./pages/Signup";
+import LogIn from "./pages/LogIn";
 import { FirebaseContext } from "./context/FirebaseContext";
 
 function App() {
@@ -36,7 +37,7 @@ function App() {
               <Route path="/JC-Website/products" element={<Products />}></Route>
               <Route path="/JC-Website/about-us" element={<About />} />
               <Route path="/JC-Website/register" element={<Signup />} />
-              <Route path="/JC-Website/login" element={<Signup />} />
+              <Route path="/JC-Website/login" element={<LogIn />} />
             </Routes>
             <Footer />
           </>

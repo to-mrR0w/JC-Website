@@ -8,9 +8,8 @@ import Alert from "react-bootstrap/Alert";
 function Signup() {
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
-  const [box, setBox] = useState(true);
   const [error, setError] = useState("");
-  const { signUp, signUpwithGoogle } = UseUserAuth();
+  const { login, signUpwithGoogle } = UseUserAuth();
   const locate = useLocation();
   const navigate = useNavigate();
 
@@ -25,14 +24,13 @@ function Signup() {
   async function signc(e) {
     e.preventDefault();
     setError("");
-    if (box) {
-      try {
-        console.log("in box");
-        await signUp(mail, password);
-        navigate("/JC-Website/");
-      } catch (error) {
-        setError(error.message);
-      }
+
+    try {
+      console.log("in box");
+      await login(mail, password);
+      navigate("/JC-Website/");
+    } catch (error) {
+      setError(error.message);
     }
   }
 
@@ -40,7 +38,7 @@ function Signup() {
     <div className=" block mx-auto mt-10 max-w-md p-4 bg-gray-200 border rounded ">
       <div className="Signup-container ">
         <h1 className="text-center text-3xl">
-          <b>{"SignUp"}</b>
+          <b>{"LogIn"}</b>
         </h1>
         {error.length > 0 && (
           <Alert className="text-center my-2" key={"Danger"} variant="danger">
@@ -69,7 +67,7 @@ function Signup() {
         className="block mx-auto px-4 py-2 bg-blue-500 text-white rounded cursor-pointer"
         onClick={signc}
       >
-        Sign up
+        Continue
       </Button>
 
       <br />
@@ -93,16 +91,6 @@ function Signup() {
             Click here!
           </Link>
         </p>
-      </div>
-      <div className="signup-agree">
-        <Input
-          type="checkbox"
-          id="checkbox"
-          onChange={() => {
-            setBox(!box);
-          }}
-        ></Input>
-        <p className="">I Agrre to the terms of use & privacy policy.</p>
       </div>
     </div>
   );

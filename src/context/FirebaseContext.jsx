@@ -11,11 +11,14 @@ import {
 import { useEffect } from "react";
 import { useState } from "react";
 import { auth } from "../config/firebase";
+import { useNavigate } from "react-router-dom";
 
 const UserAuthContext = createContext(null);
 function FirebaseContext(props) {
+  const navigate = useNavigate();
   const { children } = props;
   const [user, setUser] = useState("");
+  const [user2, setUser2] = useState("");
   const [isAuth, setIsAuth] = useState("");
   function signUp(email, password) {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -44,10 +47,10 @@ function FirebaseContext(props) {
     try {
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
-
+      setUser2(user);
       // Set to state
       setIsAuth(true);
-      console.log(user);
+      navigate("/JC-Website/");
     } catch (err) {
       console.error(err);
     }
@@ -62,7 +65,16 @@ function FirebaseContext(props) {
   }, []);
   return (
     <UserAuthContext.Provider
-      value={{ Logout, signUp, signOut, user, login, isAuth, signUpwithGoogle }}
+      value={{
+        Logout,
+        signUp,
+        signOut,
+        user,
+        login,
+        isAuth,
+        signUpwithGoogle,
+        user2,
+      }}
     >
       {children}
     </UserAuthContext.Provider>
