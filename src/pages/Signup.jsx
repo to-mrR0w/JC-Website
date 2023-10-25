@@ -83,7 +83,7 @@ function Signup() {
       </Button>
       <div className="flex gap-1 mx-auto">
         <p className="gap-1">
-          {locate.pathname.includes("login") ? "Register" : "Login"}
+          {locate.pathname.includes("login") ? "Register " : "Login "}
           <Link
             className="text-blue-600"
             to={
@@ -104,7 +104,7 @@ function Signup() {
             setBox(!box);
           }}
         ></Input>
-        <p className="">I Agrre to the terms of use & privacy policy.</p>
+        <p className="">I Agree to the terms of use & privacy policy.</p>
       </div>
     </div>
   );

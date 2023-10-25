@@ -79,8 +79,8 @@ function Signup() {
         <GoogleLogo /> Sign in with<b className="text-orange-400">Google</b>
       </Button>
       <div className="flex gap-1 mx-auto">
-        <p className="gap-1">
-          {locate.pathname.includes("login") ? "Register" : "Login"}
+        <p className="gap-1.5">
+          {locate.pathname.includes("login") ? "Register " : "Login "}
           <Link
             className="text-blue-600"
             to={
