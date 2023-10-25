@@ -35,6 +35,7 @@ function FirebaseContext(props) {
 
       // Clear state
       setIsAuth(false);
+      setUser2("");
     } catch (err) {
       console.error(err);
     }

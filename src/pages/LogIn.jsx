@@ -45,26 +45,27 @@ function Signup() {
             {error}
           </Alert>
         )}
+        <div className=" block justify-items-center ">
+          <Input
+            id="mail"
+            className="input text-center mt-4 w-full rounded-sm p-2"
+            type="email"
+            placeholder="E-Mail"
+            onChange={handleMail}
+          />
 
-        <Input
-          id="mail"
-          className="input text-center "
-          type="email"
-          placeholder="E-Mail"
-          onChange={handleMail}
-        />
-
-        <br />
-        <Input
-          id="pw"
-          className="input text-center mt-4 w-auto"
-          type="password"
-          placeholder="Passwort"
-          onChange={handlePW}
-        />
+          <br />
+          <Input
+            id="pw"
+            className="input text-center mt-4 w-full p-2 rounded-sm"
+            type="password"
+            placeholder="Passwort"
+            onChange={handlePW}
+          />
+        </div>
       </div>
       <Button
-        className="block mx-auto px-4 py-2 bg-blue-500 text-white rounded cursor-pointer"
+        className="block mx-auto px-4 py-2 bg-blue-500 text-white rounded cursor-pointer mt-4 w-auto"
         onClick={signc}
       >
         Continue
@@ -75,7 +76,7 @@ function Signup() {
         onClick={signUpwithGoogle}
         className="text-center flex gap-5 mx-auto"
       >
-        <GoogleLogo /> Sign in with Google
+        <GoogleLogo /> Sign in with<b className="text-orange-400">Google</b>
       </Button>
       <div className="flex gap-1 mx-auto">
         <p className="gap-1">

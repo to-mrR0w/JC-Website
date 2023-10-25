@@ -15,35 +15,61 @@ import { ShopContextProvider } from "./context/ShopContext";
 import Signup from "./pages/Signup";
 import LogIn from "./pages/LogIn";
 import { FirebaseContext } from "./context/FirebaseContext";
+import { MantineProvider } from "@mantine/core";
+import { Col, Container, Row } from "react-bootstrap";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
-    <FirebaseContext>
-      <ShopContextProvider>
-        <IconContext.Provider
-          value={{
-            color: "grey",
-            size: 32,
-            weight: "bold",
-            mirrored: false,
-          }}
-        >
-          <>
-            <Navbar />
-            <Routes>
-              <Route exact path="/JC-Website" element={<Home />} />
-              <Route path="/JC-Website/supporter" element={<Supporter />} />
-              <Route path="/JC-Website/cart" element={<Cart />} />
-              <Route path="/JC-Website/products" element={<Products />}></Route>
-              <Route path="/JC-Website/about-us" element={<About />} />
-              <Route path="/JC-Website/register" element={<Signup />} />
-              <Route path="/JC-Website/login" element={<LogIn />} />
-            </Routes>
-            <Footer />
-          </>
-        </IconContext.Provider>
-      </ShopContextProvider>
-    </FirebaseContext>
+    <>
+      <Container>
+        <Row>
+          <Col>
+            {" "}
+            <MantineProvider>
+              <ShopContextProvider>
+                <IconContext.Provider
+                  value={{
+                    color: "grey",
+                    size: 32,
+                    weight: "bold",
+                    mirrored: false,
+                  }}
+                >
+                  <FirebaseContext>
+                    <Navbar />
+                    <Routes>
+                      <Route
+                        exact
+                        path="/JC-Website"
+                        element={
+                          <ProtectedRoute>
+                            <Home />
+                          </ProtectedRoute>
+                        }
+                      />
+                      <Route
+                        path="/JC-Website/supporter"
+                        element={<Supporter />}
+                      />
+                      <Route path="/JC-Website/cart" element={<Cart />} />
+                      <Route
+                        path="/JC-Website/products"
+                        element={<Products />}
+                      ></Route>
+                      <Route path="/JC-Website/about-us" element={<About />} />
+                      <Route path="/JC-Website/register" element={<Signup />} />
+                      <Route path="/JC-Website/login" element={<LogIn />} />
+                    </Routes>
+                    <Footer />{" "}
+                  </FirebaseContext>{" "}
+                </IconContext.Provider>
+              </ShopContextProvider>
+            </MantineProvider>
+          </Col>
+        </Row>
+      </Container>
+    </>
   );
 }
 

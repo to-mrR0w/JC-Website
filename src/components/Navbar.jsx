@@ -11,7 +11,6 @@ function Navbar(props) {
   const [Dropdown, setDropdown] = useState(false);
   const { signInWithEmail } = props;
   const { user2, isAuth, Logout } = UseUserAuth();
-  console.log(user2);
   return (
     <>
       {/* {Dropdown && <Sidebar />} */}
@@ -48,23 +47,31 @@ function Navbar(props) {
         </ul>
         <div className="ml-auto justify-center">
           <ul>
-            <li>
-              <Avatar radius="md" src={user2.photoURL} />
-            </li>
+            <li></li>
           </ul>
         </div>
         <div className="ml-auto float-right">
           <ul className="flex list-none m-0 p-0 overflow-hidden">
+            <li>
+              <Avatar
+                className="mt-2.5"
+                variant="filled"
+                style={{ borderRadius: "80%", width: "50px", height: "50px" }}
+                src={user2.photoURL}
+              />
+            </li>{" "}
             <li className="group ">
               {isAuth ? (
-                <Button
-                  className={
-                    "block text-white text-center py-5 px-4 no-underline transition duration-400 border border-solid border-ridge border-t-0 border-l-0 border-r-0 border-b-0 border-transparent hover:text-black hover:border-black hover:bg-gray-500 cursor-pointer"
-                  }
-                  onClick={Logout}
-                >
-                  Logout
-                </Button>
+                <>
+                  <Button
+                    className={
+                      "block text-white text-center py-5 px-4 no-underline transition duration-400 border border-solid border-ridge border-t-0 border-l-0 border-r-0 border-b-0 border-transparent hover:text-black hover:border-black hover:bg-gray-500 cursor-pointer"
+                    }
+                    onClick={Logout}
+                  >
+                    Logout
+                  </Button>
+                </>
               ) : (
                 <Link
                   className="block text-white text-center py-5 px-4 no-underline transition duration-400 border border-solid border-ridge border-t-0 border-l-0 border-r-0 border-b-0 border-transparent hover:text-black hover:border-black hover:bg-gray-500 cursor-pointer"
