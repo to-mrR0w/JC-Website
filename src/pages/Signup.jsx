@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { UseUserAuth } from "../context/FirebaseContext";
+import { GoogleLogo } from "phosphor-react";
+import { useLocation } from "react-router-dom";
 
 function Signup() {
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
   const [box, setBox] = useState(true);
   const { signUp, signUpwithGoogle } = UseUserAuth();
+  const locate = useLocation();
 
   const handleMail = (e) => {
     e.preventDefault();
@@ -16,10 +19,14 @@ function Signup() {
     setPassword(e.target.value);
   };
   async function signc() {
-    try {
-      await signUp(mail, password);
-    } catch (error) {
-      console.log(error);
+    if (box !== false) {
+      try {
+        await signUp(mail, password);
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      return alert("Empty Agrement-Policy");
     }
   }
 
@@ -49,16 +56,27 @@ function Signup() {
         Continue
       </button>
       <br />
-      <button onClick={signUpwithGoogle} className="text-center">
-        {" "}
-        SIgn in with Google
+      <button
+        onClick={signUpwithGoogle}
+        className="text-center flex gap-5 mx-auto"
+      >
+        <GoogleLogo /> SIgn in with Google
       </button>
-      <p>
-        Login{" "}
-        <a className="text-blue-600" href="/">
-          Click here!
-        </a>
-      </p>
+      <div className="flex gap-1 mx-auto">
+        <p className="gap-1">
+          {locate.pathname.includes("login") ? "Register" : "Login"}
+          <a
+            className="text-blue-600"
+            href={
+              locate.pathname.includes("login")
+                ? "/JC-Website/register"
+                : "/JC-Website/login"
+            }
+          >
+            Click here!
+          </a>
+        </p>
+      </div>
       <div className="signup-agree">
         <input
           className=""

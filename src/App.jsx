@@ -35,6 +35,7 @@ function App() {
               <Route path="/JC-Website/cart" element={<Cart />} />
               <Route path="/JC-Website/products" element={<Products />}></Route>
               <Route path="/JC-Website/about-us" element={<About />} />
+              <Route path="/JC-Website/register" element={<Signup />} />
               <Route path="/JC-Website/login" element={<Signup />} />
             </Routes>
             <Footer />
