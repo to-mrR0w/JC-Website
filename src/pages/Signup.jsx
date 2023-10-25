@@ -25,9 +25,9 @@ function Signup() {
   async function signc(e) {
     e.preventDefault();
     setError("");
-    console.log("wadaw");
     if (box) {
       try {
+        console.log("in box");
         await signUp(mail, password);
       } catch (error) {
         setError(error.message);
@@ -41,7 +41,9 @@ function Signup() {
         <h1 className="text-center text-3xl">
           <b>{locate.pathname.includes("login") ? "LogIn" : "SignUp"}</b>
         </h1>
-        {error.trim().length > 0 && <Alert variant="danger">{error}</Alert>}
+
+        {error.length > 0 ? <h2>{error.message}</h2> : null}
+
         <Input
           id="mail"
           className="input text-center "
