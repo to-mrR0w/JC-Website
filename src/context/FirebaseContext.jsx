@@ -19,7 +19,7 @@ function FirebaseContext(props) {
   const { children } = props;
   const [user, setUser] = useState("");
   const [user2, setUser2] = useState("");
-  const [isAuth, setIsAuth] = useState("");
+  const [isAuth, setIsAuth] = useState(false);
   function signUp(email, password) {
     return createUserWithEmailAndPassword(auth, email, password);
   }
