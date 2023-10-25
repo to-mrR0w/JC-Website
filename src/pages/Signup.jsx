@@ -1,12 +1,16 @@
 import { useState } from "react";
 import { UseUserAuth } from "../context/FirebaseContext";
 import { GoogleLogo } from "phosphor-react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import Input from "../components/Input";
+import Button from "../components/Button";
+import { Alert } from "bootstrap";
 
 function Signup() {
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
   const [box, setBox] = useState(true);
+  const [error, setError] = useState("");
   const { signUp, signUpwithGoogle } = UseUserAuth();
   const locate = useLocation();
 
@@ -18,75 +22,80 @@ function Signup() {
     e.preventDefault();
     setPassword(e.target.value);
   };
-  async function signc() {
-    if (box !== false) {
+  async function signc(e) {
+    e.preventDefault();
+    setError("");
+    console.log("wadaw");
+    if (box) {
       try {
         await signUp(mail, password);
       } catch (error) {
-        console.log(error);
+        setError(error.message);
       }
-    } else {
-      return alert("Empty Agrement-Policy");
     }
   }
 
   return (
     <div className=" block mx-auto mt-10 max-w-md p-4 bg-gray-200 border rounded ">
       <div className="Signup-container ">
-        <input
+        <h1 className="text-center text-3xl">
+          <b>{locate.pathname.includes("login") ? "LogIn" : "SignUp"}</b>
+        </h1>
+        {error.trim().length > 0 && <Alert variant="danger">{error}</Alert>}
+        <Input
           id="mail"
           className="input text-center "
           type="email"
           placeholder="E-Mail"
           onChange={handleMail}
-        ></input>
+        />
+
         <br />
-        <input
+        <Input
           id="pw"
           className="input text-center mt-4 w-auto"
           type="password"
           placeholder="Passwort"
           onChange={handlePW}
-        ></input>
+        />
       </div>
-      <button
+      <Button
         className="block mx-auto px-4 py-2 bg-blue-500 text-white rounded cursor-pointer"
-        onClick={() => signc}
+        onClick={signc}
       >
         Continue
-      </button>
+      </Button>
+
       <br />
-      <button
+      <Button
         onClick={signUpwithGoogle}
         className="text-center flex gap-5 mx-auto"
       >
         <GoogleLogo /> SIgn in with Google
-      </button>
+      </Button>
       <div className="flex gap-1 mx-auto">
         <p className="gap-1">
           {locate.pathname.includes("login") ? "Register" : "Login"}
-          <a
+          <Link
             className="text-blue-600"
-            href={
+            to={
               locate.pathname.includes("login")
                 ? "/JC-Website/register"
                 : "/JC-Website/login"
             }
           >
             Click here!
-          </a>
+          </Link>
         </p>
       </div>
       <div className="signup-agree">
-        <input
-          className=""
+        <Input
           type="checkbox"
-          name=""
-          id=""
+          id="checkbox"
           onChange={() => {
             setBox(!box);
           }}
-        ></input>
+        ></Input>
         <p className="">I Agrre to the terms of use & privacy policy.</p>
       </div>
     </div>
