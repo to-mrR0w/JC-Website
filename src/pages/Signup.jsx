@@ -48,24 +48,25 @@ function Signup() {
           </Alert>
         )}
 
-        <div className=" block justify-items-center ">
+        <form className=" block justify-items-center ">
           <Input
+            required={true}
             id="mail"
             className="input text-center mt-4 w-full rounded-sm p-2"
             type="email"
             placeholder="E-Mail"
             onChange={handleMail}
           />
-
           <br />
           <Input
+            required={true}
             id="pw"
             className="input text-center mt-4 w-full p-2 rounded-sm"
             type="password"
             placeholder="Passwort"
             onChange={handlePW}
           />
-        </div>
+        </form>
       </div>
       <Button
         className="block mx-auto px-4 py-2 bg-blue-500 text-white rounded cursor-pointer"
