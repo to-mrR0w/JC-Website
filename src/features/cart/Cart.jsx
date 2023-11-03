@@ -18,7 +18,7 @@ function Cart() {
         {DATA.map((product) =>
           cartItems[product.id] !== 0 ? (
             <CartItem key={product.id} data={product} />
-          ) : null
+          ) : null,
         )}
       </div>
       <div className="checkout">

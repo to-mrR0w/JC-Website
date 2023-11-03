@@ -10,7 +10,7 @@ import {
 } from "firebase/auth";
 import { useEffect } from "react";
 import { useState } from "react";
-import { auth } from "../config/firebase";
+import { auth } from "../features/config/firebase";
 import { useNavigate } from "react-router-dom";
 
 const UserAuthContext = createContext(null);
