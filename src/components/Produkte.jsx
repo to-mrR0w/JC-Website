@@ -38,6 +38,7 @@ function Produkte(props) {
           </button>
         </li>
       </ul>
+      <div className="content-details flex">Hallo</div>
     </div>
   );
 }
