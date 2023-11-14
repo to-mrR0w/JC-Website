@@ -16,20 +16,23 @@ import Cart from "./features/cart/Cart";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { ShopContextProvider } from "./context/ShopContext";
 import { IconContext } from "phosphor-react";
-import { FirebaseContext } from "./context/FirebaseContext";
 import { MantineProvider } from "@mantine/core";
 import AppLayout from "./pages/AppLayout";
+import Impressum from "./pages/Impressum";
+import Error from "./pages/Error";
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
+    errorElement: <Error />,
     children: [
-      { path: "/JC-Website/", element: <Home /> }, //TODO loader
+      { path: "/JC-Website", element: <Home /> }, //TODO loader
       { path: "/JC-Website/cart", element: <Cart /> },
       { path: "/JC-Website/products", element: <Products /> },
       { path: "/JC-Website/supporter", element: <Supporter /> },
       { path: "/JC-Website/about-us", element: <About /> },
       { path: "/JC-Website/register", element: <Signup /> },
       { path: "/JC-Website/login", element: <LogIn /> },
+      { path: "/JC-Website/impressum", element: <Impressum /> },
     ],
   },
 ]);
@@ -46,9 +49,7 @@ function App() {
             mirrored: false,
           }}
         >
-          <FirebaseContext>
-            <RouterProvider router={router} />
-          </FirebaseContext>
+          <RouterProvider router={router} />
         </IconContext.Provider>
       </ShopContextProvider>
     </MantineProvider>
