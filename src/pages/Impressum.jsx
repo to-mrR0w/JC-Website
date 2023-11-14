@@ -2,7 +2,7 @@ function Impressum() {
   return (
     <div className="text-center ">
       <h2>Impressum der Junior Company EasyCharge</h2>
-      <div className="flex flex-col space-x-7 max-w-xl">
+      <div className="flex flex-col space-x-7  text-center justify-center">
         <div>
           <strong>Adresse:</strong> [Name des Verantwortlichen], [Musterstraße
           123], [PLZ Ort]
