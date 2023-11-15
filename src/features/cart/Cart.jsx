@@ -19,7 +19,7 @@ function Cart() {
   const navigate = useNavigate();
   return (
     <>
-      {getTotal > 0 ? (
+      {getTotala > 0 ? (
         <div className="cart">
           <div className="title">
             <h1 className="">

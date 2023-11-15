@@ -21,6 +21,13 @@ import Impressum from "./pages/Impressum";
 import Error from "./pages/Error";
 import { Route, Routes } from "react-router-dom";
 import { FirebaseContext } from "./context/FirebaseContext";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import CheckoutForm from "./pages/CheckoutForm";
+
+// Make sure to call `loadStripe` outside of a component’s render to avoid
+// recreating the `Stripe` object on every render.
+const stripePromise = loadStripe("pk_test_mY9dmGCWnQgKn04SrNtHCjNJ");
 
 // const router = createBrowserRouter([
 //   {
@@ -40,6 +47,11 @@ import { FirebaseContext } from "./context/FirebaseContext";
 // ]);
 
 function App() {
+  const options = {
+    // passing the client secret obtained from the server
+    clientSecret: "{{CLIENT_SECRET}}",
+  };
+
   return (
     // <MantineProvider>
     //   <ShopContextProvider>
@@ -55,6 +67,7 @@ function App() {
     //     </IconContext.Provider>
     //   </ShopContextProvider>
     // </MantineProvider>
+
     <>
       <MantineProvider>
         <ShopContextProvider>
@@ -83,6 +96,9 @@ function App() {
                 <Route path="*" element={<Error />} />
                 <Route path="/register" element={<Signup />} />
                 <Route path="/login" element={<LogIn />} />
+                <Elements stripe={stripePromise} options={options}>
+                  <Route path="checkout" element={<CheckoutForm />} />
+                </Elements>
               </Routes>
             </FirebaseContext>
           </IconContext.Provider>
