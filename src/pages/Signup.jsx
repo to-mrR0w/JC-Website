@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { UseUserAuth } from "../context/FirebaseContext";
 import { GoogleLogo } from "phosphor-react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import Alert from "react-bootstrap/Alert";
@@ -13,7 +13,6 @@ function Signup() {
   const [error, setError] = useState("");
   const { signUp, signUpwithGoogle } = UseUserAuth();
   const locate = useLocation();
-  const navigate = useNavigate();
 
   const handleMail = (e) => {
     e.preventDefault();
@@ -29,7 +28,6 @@ function Signup() {
     try {
       console.log("in box");
       await signUp(mail, password);
-      navigate("/JC-Website/");
     } catch (error) {
       setError(error.message);
     }

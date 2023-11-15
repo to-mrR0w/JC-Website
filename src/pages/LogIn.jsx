@@ -1,39 +1,41 @@
 import { useState } from "react";
 import { GoogleLogo } from "phosphor-react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import Alert from "react-bootstrap/Alert";
 import { UseUserAuth } from "../context/FirebaseContext";
 import Header from "../components/Header";
+
 function Signup() {
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const { login, signUpwithGoogle } = UseUserAuth();
   const locate = useLocation();
-  const navigate = useNavigate();
 
   const handleMail = (e) => {
     e.preventDefault();
     setMail(e.target.value);
   };
+
   const handlePW = (e) => {
     e.preventDefault();
     setPassword(e.target.value);
   };
-  async function signc(e) {
+
+  const handleSignup = async (e) => {
     e.preventDefault();
     setError("");
 
     try {
-      console.log("in box");
       await login(mail, password);
-      navigate("/JC-Website/");
+      console.log("succeded?");
     } catch (error) {
+      console.error("Login error:", error);
       setError(error.message);
     }
-  }
+  };
 
   return (
     <>
@@ -73,7 +75,7 @@ function Signup() {
         </div>
         <Button
           className="block mx-auto px-4 py-2 bg-blue-500 text-white rounded cursor-pointer mt-4 w-auto"
-          onClick={signc}
+          onClick={handleSignup}
         >
           Continue
         </Button>
