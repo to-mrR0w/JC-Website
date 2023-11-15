@@ -45,7 +45,11 @@ function Signup() {
             <b>{"SignUp"}</b>
           </h1>
           {error.length > 0 && (
-            <Alert className="text-center my-2" key={"Danger"} variant="danger">
+            <Alert
+              className="text-center my-2 mt-2 rounded-md bg-red-100 p-2 text-xs text-red-400"
+              key={"Danger"}
+              variant="danger"
+            >
               {error}
             </Alert>
           )}
