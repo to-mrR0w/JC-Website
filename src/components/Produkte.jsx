@@ -27,19 +27,18 @@ function Produkte(props) {
               <b>Preis: </b> {price}
             </span>
           </div>
-
-          <button
-            key={`Add${id}`}
-            onClick={() => addCart(id)}
-            className={`${
-              cartItemsAmount > 0 ? "bg-green-100" : ""
-            } addToCartBttn border border-gray-700 px-4 py-2 rounded-lg mt-4 hover:bg-gray-700 hover:text-white  cursor-pointer`}
-          >
-            Hinzufügen zum Einkaufwagen
-            {cartItemsAmount > 0 && <>({cartItemsAmount})</>}
-          </button>
         </li>
       </ul>
+      <button
+        key={`Add${id}`}
+        onClick={() => addCart(id)}
+        className={`${
+          cartItemsAmount > 0 ? "bg-slate-600 text-white" : ""
+        } addToCartBttn border border-gray-700 px-4 py-2 rounded-lg mt-4 hover:bg-gray-700 hover:text-white  cursor-pointer`}
+      >
+        Hinzufügen zum Einkaufwagen
+        {cartItemsAmount > 0 && <>({cartItemsAmount})</>}
+      </button>
       <div className="content-details">
         <p>Details:</p>
         <ul className="left-0 ml-0 p-0">
