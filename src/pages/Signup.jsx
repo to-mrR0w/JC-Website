@@ -28,6 +28,7 @@ function Signup() {
     try {
       console.log("in box");
       await signUp(mail, password);
+      alert("We have sent you an email!");
     } catch (error) {
       setError(error.message);
     }

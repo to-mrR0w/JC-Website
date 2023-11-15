@@ -15,7 +15,7 @@ const UserAuthContext = createContext(null);
 
 const actionCodeSettings = {
   // Replace with your actual app's URL
-  url: "http://localhost:5173/login/v",
+  url: "http://localhost:5173/login/",
   handleCodeInApp: true,
 };
 
@@ -29,13 +29,14 @@ function FirebaseContext(props) {
   const signUp = async (email) => {
     try {
       // Use the sendSignInLinkToEmail method
-      await sendSignInLinkToEmail(auth, email, actionCodeSettings);
+      sendSignInLinkToEmail(auth, email, actionCodeSettings).then(() => {
+        console.log("Sign-in link sent successfully");
+        window.localStorage.setItem("email", email);
+      });
 
       // The link was successfully sent. Inform the user.
       // Save the email locally so you don't need to ask the user for it again
       // if they open the link on the same device.
-      window.localStorage.setItem("emailForSignIn", email);
-      console.log("Sign-in link sent successfully");
     } catch (error) {
       var errorCode = error.code;
       var errorMessage = error.message;
