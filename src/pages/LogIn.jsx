@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { UseUserAuth } from "../context/FirebaseContext";
 import { GoogleLogo } from "phosphor-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import Alert from "react-bootstrap/Alert";
+import { UseUserAuth } from "../context/FirebaseContext";
 function Signup() {
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
@@ -83,11 +83,7 @@ function Signup() {
           {locate.pathname.includes("login") ? "Register " : "Login "}
           <Link
             className="text-blue-600"
-            to={
-              locate.pathname.includes("login")
-                ? "/JC-Website/register"
-                : "/JC-Website/login"
-            }
+            to={locate.pathname.includes("login") ? "/register" : "/login"}
           >
             Click here!
           </Link>

@@ -87,11 +87,7 @@ function Signup() {
           {locate.pathname.includes("login") ? "Register " : "Login "}
           <Link
             className="text-blue-600"
-            to={
-              locate.pathname.includes("login")
-                ? "/JC-Website/register"
-                : "/JC-Website/login"
-            }
+            to={locate.pathname.includes("login") ? "/register" : "/login"}
           >
             Click here!
           </Link>

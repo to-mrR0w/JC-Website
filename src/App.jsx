@@ -20,6 +20,8 @@ import AppLayout from "./pages/AppLayout";
 import Impressum from "./pages/Impressum";
 import Error from "./pages/Error";
 import { Route, Routes } from "react-router-dom";
+import { FirebaseContext } from "./context/FirebaseContext";
+
 // const router = createBrowserRouter([
 //   {
 //     element: <AppLayout />,
@@ -64,20 +66,22 @@ function App() {
               mirrored: false,
             }}
           >
-            <Routes>
-              <Route element={<AppLayout />}>
-                <Route index element={<Home />} />
-                <Route index exact path="/JC-Website/" element={<Home />} />
-                <Route path="supporter" element={<Supporter />} />
-                <Route path="cart" element={<Cart />} />
-                <Route path="products" element={<Products />}></Route>
-                <Route path="about-us" element={<About />} />
-                <Route path="impressum" element={<Impressum />} />
-              </Route>
-              <Route path="*" element={<Error />} />
-              <Route path="/JC-Website/register" element={<Signup />} />
-              <Route path="/JC-Website/login" element={<LogIn />} />
-            </Routes>
+            <FirebaseContext>
+              <Routes>
+                <Route element={<AppLayout />}>
+                  <Route index element={<Home />} />
+                  <Route index exact path="/JC-Website/" element={<Home />} />
+                  <Route path="supporter" element={<Supporter />} />
+                  <Route path="cart" element={<Cart />} />
+                  <Route path="products" element={<Products />}></Route>
+                  <Route path="about-us" element={<About />} />
+                  <Route path="impressum" element={<Impressum />} />
+                </Route>
+                <Route path="*" element={<Error />} />
+                <Route path="/register" element={<Signup />} />
+                <Route path="/login" element={<LogIn />} />
+              </Routes>
+            </FirebaseContext>
           </IconContext.Provider>
         </ShopContextProvider>
       </MantineProvider>
