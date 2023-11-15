@@ -5,6 +5,7 @@ import Input from "../components/Input";
 import Button from "../components/Button";
 import Alert from "react-bootstrap/Alert";
 import { UseUserAuth } from "../context/FirebaseContext";
+import Header from "../components/Header";
 function Signup() {
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
@@ -35,61 +36,64 @@ function Signup() {
   }
 
   return (
-    <div className=" block mx-auto mt-10 max-w-md p-4 bg-gray-200 border rounded ">
-      <div className="Signup-container ">
-        <h1 className="text-center text-3xl">
-          <b>{"LogIn"}</b>
-        </h1>
-        {error.length > 0 && (
-          <Alert className="text-center my-2" key={"Danger"} variant="danger">
-            {error}
-          </Alert>
-        )}
-        <div className=" block justify-items-center ">
-          <Input
-            id="mail"
-            className="input text-center mt-4 w-full rounded-sm p-2"
-            type="email"
-            placeholder="E-Mail"
-            onChange={handleMail}
-          />
+    <>
+      <Header />
+      <div className=" block mx-auto mt-10 max-w-md p-4 bg-gray-200 border rounded ">
+        <div className="Signup-container ">
+          <h1 className="text-center text-3xl">
+            <b>{"LogIn"}</b>
+          </h1>
+          {error.length > 0 && (
+            <Alert className="text-center my-2" key={"Danger"} variant="danger">
+              {error}
+            </Alert>
+          )}
+          <div className=" block justify-items-center ">
+            <Input
+              id="mail"
+              className="input text-center mt-4 w-full rounded-sm p-2"
+              type="email"
+              placeholder="E-Mail"
+              onChange={handleMail}
+            />
 
-          <br />
-          <Input
-            id="pw"
-            className="input text-center mt-4 w-full p-2 rounded-sm"
-            type="password"
-            placeholder="Passwort"
-            onChange={handlePW}
-          />
+            <br />
+            <Input
+              id="pw"
+              className="input text-center mt-4 w-full p-2 rounded-sm"
+              type="password"
+              placeholder="Passwort"
+              onChange={handlePW}
+            />
+          </div>
+        </div>
+        <Button
+          className="block mx-auto px-4 py-2 bg-blue-500 text-white rounded cursor-pointer mt-4 w-auto"
+          onClick={signc}
+        >
+          Continue
+        </Button>
+
+        <br />
+        <Button
+          onClick={signUpwithGoogle}
+          className="text-center flex gap-5 mx-auto"
+        >
+          <GoogleLogo /> Sign in with<b className="text-orange-400">Google</b>
+        </Button>
+        <div className="flex gap-1 mx-auto">
+          <p className="gap-1.5">
+            {locate.pathname.includes("login") ? "Register " : "Login "}
+            <Link
+              className="text-blue-600"
+              to={locate.pathname.includes("login") ? "/register" : "/login"}
+            >
+              Click here!
+            </Link>
+          </p>
         </div>
       </div>
-      <Button
-        className="block mx-auto px-4 py-2 bg-blue-500 text-white rounded cursor-pointer mt-4 w-auto"
-        onClick={signc}
-      >
-        Continue
-      </Button>
-
-      <br />
-      <Button
-        onClick={signUpwithGoogle}
-        className="text-center flex gap-5 mx-auto"
-      >
-        <GoogleLogo /> Sign in with<b className="text-orange-400">Google</b>
-      </Button>
-      <div className="flex gap-1 mx-auto">
-        <p className="gap-1.5">
-          {locate.pathname.includes("login") ? "Register " : "Login "}
-          <Link
-            className="text-blue-600"
-            to={locate.pathname.includes("login") ? "/register" : "/login"}
-          >
-            Click here!
-          </Link>
-        </p>
-      </div>
-    </div>
+    </>
   );
 }
 

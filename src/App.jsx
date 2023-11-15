@@ -71,11 +71,14 @@ function App() {
                 <Route element={<AppLayout />}>
                   <Route index element={<Home />} />
                   <Route index exact path="/JC-Website/" element={<Home />} />
-                  <Route path="supporter" element={<Supporter />} />
-                  <Route path="cart" element={<Cart />} />
-                  <Route path="products" element={<Products />}></Route>
-                  <Route path="about-us" element={<About />} />
-                  <Route path="impressum" element={<Impressum />} />
+                  <Route path="/JC-Website/supporter" element={<Supporter />} />
+                  <Route path="/JC-Website/cart" element={<Cart />} />
+                  <Route
+                    path="/JC-Website/products"
+                    element={<Products />}
+                  ></Route>
+                  <Route path="/JC-Website/about-us" element={<About />} />
+                  <Route path="/JC-Website/impressum" element={<Impressum />} />
                 </Route>
                 <Route path="*" element={<Error />} />
                 <Route path="/register" element={<Signup />} />

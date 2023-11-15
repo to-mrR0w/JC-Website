@@ -1,5 +1,4 @@
 // import Newslette from "../components/Newsletter/newslette";
-import Footer from "../components/Footer";
 function Home() {
   return (
     <>
@@ -20,7 +19,6 @@ function Home() {
         </div>
       </div>{" "}
       {/* <Newslette /> */}
-      <Footer />
     </>
   );
 }
