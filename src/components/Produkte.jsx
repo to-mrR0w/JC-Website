@@ -8,11 +8,11 @@ function Produkte(props) {
   const { addCart, cartItems } = useContext(ShopContext);
   const cartItemsAmount = cartItems[id];
   return (
-    <div className="product border rounded-lg w-64 md:w-80 h-95 p-6 m-4 flex flex-col justify-center items-center">
+    <div className="product border rounded-lg w-64 md:w-80 h-95 p-6 m-4 flex flex-col justify-center ">
       <ul className="">
         <li key={`Liste${id}`}>
           <img
-            className=""
+            className="mx-auto rounded-2xl"
             key={`Image${id}`}
             src={productImg}
             alt={`Picture:${productImg}`}
@@ -31,14 +31,23 @@ function Produkte(props) {
           <button
             key={`Add${id}`}
             onClick={() => addCart(id)}
-            className="addToCartBttn border border-gray-700 px-4 py-2 rounded-lg mt-4 hover:bg-gray-700 hover:text-white "
+            className={`${
+              cartItemsAmount > 0 ? "bg-green-100" : ""
+            } addToCartBttn border border-gray-700 px-4 py-2 rounded-lg mt-4 hover:bg-gray-700 hover:text-white  cursor-pointer`}
           >
             Hinzufügen zum Einkaufwagen
             {cartItemsAmount > 0 && <>({cartItemsAmount})</>}
           </button>
         </li>
       </ul>
-      <div className="content-details flex">Hallo</div>
+      <div className="content-details">
+        <p>Details:</p>
+        <ul className="left-0 ml-0 p-0">
+          <li>adw</li>
+          <li>adwasd</li>
+          <li>adwasdaf</li>
+        </ul>
+      </div>
     </div>
   );
 }

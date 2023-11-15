@@ -1,23 +1,28 @@
 import { InstagramLogo, YoutubeLogo } from "phosphor-react";
 import "./Footer.css";
+import styled from "styled-components";
+import { FaMailchimp } from "react-icons/fa";
+
+styled.footer``;
 
 function Footer() {
   return (
-    <footer className="footer mt-auto">
-      <div className="footer-logo">
+    <footer className="space-y-2 m-2 absolute bottom-0 w-full ">
+      {/* <div className="footer-logo">
         <img src="" alt="" />
-      </div>
-      <div className="social-media">
-        <div className="icon-container">
-          <p>
-            <InstagramLogo />
-          </p>
-          <p>
-            <YoutubeLogo />
-          </p>
-        </div>
-      </div>
-      <p className="justify-center">Contact: easycharger@gmail.com</p>
+      </div> */}
+      <span>
+        <InstagramLogo />
+      </span>
+      <span>
+        <YoutubeLogo />
+      </span>
+      <span className="flex">
+        <FaMailchimp />{" "}
+        <p className=" font-semibold text-stone-600 ">
+          Contact: easycharger@gmail.com
+        </p>
+      </span>
     </footer>
   );
 }

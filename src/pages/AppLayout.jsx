@@ -7,9 +7,9 @@ import { FirebaseContext } from "../context/FirebaseContext";
 function AppLayout() {
   return (
     <FirebaseContext>
-      <div>
+      <div className="h-full overflow-hidden">
         <Header />
-        <main>
+        <main className="relative min-h-full overflow-auto">
           <Outlet />
         </main>
         <Footer />
