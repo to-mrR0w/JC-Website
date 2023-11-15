@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { UseUserAuth } from "../context/FirebaseContext";
 import { GoogleLogo } from "phosphor-react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import Alert from "react-bootstrap/Alert";
 import Header from "../components/Header";
+import { isSignInWithEmailLink, signInWithEmailLink } from "firebase/auth";
+import { auth } from "../features/config/firebase";
 function Signup() {
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
@@ -33,7 +35,30 @@ function Signup() {
       setError(error.message);
     }
   }
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    const handleSignInWithEmailLink = async () => {
+      if (isSignInWithEmailLink(auth, window.location.href)) {
+        let email = localStorage.getItem("email");
+
+        if (!email) {
+          email = window.prompt("Please provide your email!");
+        }
+
+        try {
+          await signInWithEmailLink(auth, email, window.location.href);
+          localStorage.removeItem("email");
+          navigate("/JC-Website");
+        } catch (err) {
+          console.error(err);
+          navigate("login");
+        }
+      }
+    };
+
+    handleSignInWithEmailLink();
+  }, []);
   return (
     <>
       <Header />
