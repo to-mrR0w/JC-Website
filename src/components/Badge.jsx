@@ -25,7 +25,6 @@ const BadgeDot = styled.div`
 
 const Badge = () => {
   const count = useSelector(getTotalCartQuantity);
-  console.log(count !== undefined);
   return (
     <>
       {count !== undefined ? (

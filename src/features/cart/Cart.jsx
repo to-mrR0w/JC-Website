@@ -16,7 +16,6 @@ const H1 = styled.h1`
 function Cart() {
   const getTotala = useSelector(getTotalCartPrice);
   const DATA = useSelector((state) => state.cart.cart);
-  console.log(DATA);
   const navigate = useNavigate();
   return (
     <>

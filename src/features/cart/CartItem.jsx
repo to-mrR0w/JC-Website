@@ -14,7 +14,6 @@ const CartItem = (props) => {
 
   const { name, productImg, unitPrice, cartId: id } = data;
   const quantity = useSelector(getCurrQuantityById(id));
-  console.log(id);
   return (
     <div className="cartItem">
       <img src={productImg} />

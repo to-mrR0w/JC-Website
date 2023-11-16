@@ -15,7 +15,7 @@ function Home() {
           takimata sanctus est Lorem ipsum dolor sit amet.
         </section>
         <div className="image">
-          <img src="/2.jpg" alt="Bild" />
+          <img src="/forrest.jpg" alt="Bild" />
         </div>
       </div>{" "}
       {/* <Newslette /> */}
