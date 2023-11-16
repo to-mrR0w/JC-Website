@@ -24,12 +24,19 @@ const BadgeDot = styled.div`
 
 const Badge = () => {
   const { quantity: count } = useSelector((state) => state.cart);
+  console.log(count !== undefined);
   return (
-    <BadgeContainer>
-      <BadgeDot>
-        {count && count > 0 && <span className="p-0">{count}</span>}
-      </BadgeDot>
-    </BadgeContainer>
+    <>
+      {count !== undefined ? (
+        <>
+          <BadgeContainer>
+            <BadgeDot>
+              {count && count > 0 && <span className="p-0">{count}</span>}
+            </BadgeDot>
+          </BadgeContainer>
+        </>
+      ) : null}
+    </>
   );
 };
 
