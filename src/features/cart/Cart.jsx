@@ -4,6 +4,7 @@ import { ShopContext } from "../../context/ShopContext";
 import CartItem from "./CartItem";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { ShoppingCart } from "phosphor-react";
 
 const H1 = styled.h1`
   font-weight: 600;
@@ -45,11 +46,23 @@ function Cart() {
           </div>
         </div>
       ) : (
-        <>
-          <H1 className="mt-10 ">
-            <p className="bg-red-300 w-40 rounded-md">Empty Cart</p>
+        <div className="flex text-center justify-center flex-col">
+          <span className="text-center justify-center flex ">
+            <ShoppingCart size={144} color="#020202" />{" "}
+          </span>
+          <H1 className="mt-2 ">
+            <p className="bg-red-600 w-40 rounded-md">Empty Cart</p>
           </H1>
-        </>
+          <span>
+            <button
+              className="mt-4 bg-slate-300 w-40 rounded-lg"
+              onClick={() => navigate("/JC-Website/")}
+            >
+              {" "}
+              Continue Shopping
+            </button>
+          </span>
+        </div>
       )}
     </>
   );

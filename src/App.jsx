@@ -3,9 +3,10 @@
 import About from "./pages/About";
 import Supporter from "./pages/Supporter";
 import Products from "./pages/Products";
-import Signup from "./pages/Signup";
-import LogIn from "./pages/LogIn";
 import Home from "./pages/Home";
+import AppLayout from "./pages/AppLayout";
+import Impressum from "./pages/Impressum";
+import Error from "./pages/Error";
 
 import Cart from "./features/cart/Cart";
 
@@ -13,21 +14,17 @@ import Cart from "./features/cart/Cart";
 // import Navbar from "./components/Navbar";
 // import Footer from "./components/Footer";
 
+import { FirebaseContext } from "./context/FirebaseContext";
 import { ShopContextProvider } from "./context/ShopContext";
+
 import { IconContext } from "phosphor-react";
 import { MantineProvider } from "@mantine/core";
-import AppLayout from "./pages/AppLayout";
-import Impressum from "./pages/Impressum";
-import Error from "./pages/Error";
 import { Route, Routes } from "react-router-dom";
-import { FirebaseContext } from "./context/FirebaseContext";
-import { Elements } from "@stripe/react-stripe-js";
-import { loadStripe } from "@stripe/stripe-js";
-import InjectedCheckoutForm from "./pages/CheckoutForm";
+// import { loadStripe } from "@stripe/stripe-js";
+// const stripePromise = loadStripe("pk_test_mY9dmGCWnQgKn04SrNtHCjNJ");
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
-const stripePromise = loadStripe("pk_test_mY9dmGCWnQgKn04SrNtHCjNJ");
 
 // const router = createBrowserRouter([
 //   {
@@ -47,10 +44,10 @@ const stripePromise = loadStripe("pk_test_mY9dmGCWnQgKn04SrNtHCjNJ");
 // ]);
 
 function App() {
-  const options = {
-    // passing the client secret obtained from the server
-    clientSecret: "{{CLIENT_SECRET}}",
-  };
+  // const options = {
+  //   // passing the client secret obtained from the server
+  //   clientSecret: "{{CLIENT_SECRET}}",
+  // };
 
   return (
     // <MantineProvider>
@@ -94,10 +91,10 @@ function App() {
                   <Route path="/JC-Website/impressum" element={<Impressum />} />
                 </Route>
                 <Route path="*" element={<Error />} />
-                <Route path="/register" element={<Signup />} />
-                <Route path="/login" element={<LogIn />} />
+                {/* <Route path="/register" element={<Signup />} />
+                <Route path="/login" element={<LogIn />} /> */}
 
-                <Route
+                {/* <Route
                   path="checkout"
                   element={
                     <>
@@ -106,7 +103,7 @@ function App() {
                       </Elements>
                     </>
                   }
-                />
+                /> */}
               </Routes>
             </FirebaseContext>
           </IconContext.Provider>
