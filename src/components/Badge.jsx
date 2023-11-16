@@ -1,6 +1,7 @@
 // src/components/Badge.js
 import { useSelector } from "react-redux";
 import styled from "styled-components";
+import { getTotalCartQuantity } from "../features/cart/cartSlice";
 
 const BadgeContainer = styled.div`
   position: relative;
@@ -23,7 +24,7 @@ const BadgeDot = styled.div`
 `;
 
 const Badge = () => {
-  const { quantity: count } = useSelector((state) => state.cart);
+  const count = useSelector(getTotalCartQuantity);
   console.log(count !== undefined);
   return (
     <>

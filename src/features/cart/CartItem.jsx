@@ -1,14 +1,20 @@
-import { useContext } from "react";
 import "./cart.css";
-import { ShopContext } from "../../context/ShopContext";
 import { FaAngleDown, FaAngleUp, FaTimes } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  decreaseItemQuantity,
+  deleteItem,
+  getCurrQuantityById,
+  increaseItemQuantity,
+} from "./cartSlice";
 const CartItem = (props) => {
-  const { cartItems, addCart, removeFromCart, updateCart } =
-    useContext(ShopContext);
+  const dispatch = useDispatch();
 
   const { data } = props;
 
-  const { name, productImg, price, id } = data;
+  const { name, productImg, unitPrice, cartId: id } = data;
+  const quantity = useSelector(getCurrQuantityById(id));
+  console.log(id);
   return (
     <div className="cartItem">
       <img src={productImg} />
@@ -16,21 +22,29 @@ const CartItem = (props) => {
         <p>
           <b>{name}</b>
         </p>
-        <p>{price}</p>
+        <p>{unitPrice}</p>
       </div>
       <div className="countHandler">
         {" "}
-        <button onClick={() => addCart(id)}>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            dispatch(increaseItemQuantity(id));
+          }}
+        >
           {" "}
           <FaAngleUp />{" "}
         </button>
-        <input
-          value={cartItems[id]}
-          onChange={(e) => updateCart(Number(e.target.value), id)}
-        />
-        <button onClick={() => removeFromCart(id)}>
-          {cartItems[id] === 1 ? <FaTimes /> : <FaAngleDown />}
-        </button>
+        <input value={quantity} disabled onChange={(e) => e.preventDefault()} />
+        {quantity <= 1 ? (
+          <button onClick={() => dispatch(deleteItem(id))}>
+            <FaTimes />
+          </button>
+        ) : (
+          <button onClick={() => dispatch(decreaseItemQuantity(id))}>
+            <FaAngleDown />
+          </button>
+        )}
       </div>
     </div>
   );

@@ -1,10 +1,9 @@
-import { DATA } from "../../products";
-import { useContext } from "react";
-import { ShopContext } from "../../context/ShopContext";
 import CartItem from "./CartItem";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { ShoppingCart } from "phosphor-react";
+import { useSelector } from "react-redux";
+import { getTotalCartPrice } from "./cartSlice";
 
 const H1 = styled.h1`
   font-weight: 600;
@@ -15,8 +14,9 @@ const H1 = styled.h1`
   display: flex;
 `;
 function Cart() {
-  const { cartItems, getTotal } = useContext(ShopContext);
-  const getTotala = getTotal();
+  const getTotala = useSelector(getTotalCartPrice);
+  const DATA = useSelector((state) => state.cart.cart);
+  console.log(DATA);
   const navigate = useNavigate();
   return (
     <>
@@ -29,19 +29,24 @@ function Cart() {
           </div>
           <div key={"OK"}>
             {DATA.map((product) =>
-              cartItems[product.id] !== 0 ? (
-                <CartItem key={product.id} data={product} />
+              product.cartId !== 0 ? (
+                <CartItem key={product.cartId} data={product} />
               ) : null,
             )}
           </div>
           <div className="checkout">
             {" "}
             {getTotala > 0 ? (
-              <p>Subtotal: {getTotala}</p>
+              <p>
+                <strong>Subtotal:</strong> {getTotala.toFixed(2)}€
+              </p>
             ) : (
               <h1 className="text-2xl">Empty Cart</h1>
             )}
-            <button onClick={() => navigate("/JC-Website/")}> Continue </button>
+            <button onClick={() => navigate("/JC-Website/")}>
+              {" "}
+              Continue Shopping{" "}
+            </button>
             <button> Checkout</button>
           </div>
         </div>
