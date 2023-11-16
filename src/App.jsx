@@ -23,7 +23,7 @@ import { Route, Routes } from "react-router-dom";
 import { FirebaseContext } from "./context/FirebaseContext";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import CheckoutForm from "./pages/CheckoutForm";
+import InjectedCheckoutForm from "./pages/CheckoutForm";
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
@@ -96,9 +96,17 @@ function App() {
                 <Route path="*" element={<Error />} />
                 <Route path="/register" element={<Signup />} />
                 <Route path="/login" element={<LogIn />} />
-                <Elements stripe={stripePromise} options={options}>
-                  <Route path="checkout" element={<CheckoutForm />} />
-                </Elements>
+
+                <Route
+                  path="checkout"
+                  element={
+                    <>
+                      <Elements stripe={stripePromise} options={options}>
+                        <InjectedCheckoutForm />
+                      </Elements>
+                    </>
+                  }
+                />
               </Routes>
             </FirebaseContext>
           </IconContext.Provider>
