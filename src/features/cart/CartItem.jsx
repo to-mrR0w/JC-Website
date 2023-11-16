@@ -35,6 +35,14 @@ const CartItem = (props) => {
           {" "}
           <FaAngleUp />{" "}
         </button>
+        {quantity > 1 && (
+          <button
+            className="relative left-[-40px] bottom-[-30px]"
+            onClick={() => dispatch(deleteItem(id))}
+          >
+            <FaTimes color="red" />
+          </button>
+        )}
         <input value={quantity} disabled onChange={(e) => e.preventDefault()} />
         {quantity <= 1 ? (
           <button onClick={() => dispatch(deleteItem(id))}>
