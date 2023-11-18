@@ -27,6 +27,8 @@ import { Elements } from "@stripe/react-stripe-js";
 import Checkout from "./pages/Checkout/Checkout";
 import PrivateRoute from "./pages/PrivateRoute/PrivateRoute";
 import Payment from "./pages/Checkout/Payment";
+// Add this import at the top of your App.jsx file if it's not already there
+import process from "process";
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
@@ -47,9 +49,7 @@ import Payment from "./pages/Checkout/Payment";
 //     ],
 //   },
 // ]);
-const stripePromise = loadStripe(
-  import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY ?? "",
-);
+const stripePromise = loadStripe(process.env.PUBLIC ?? "");
 function App() {
   // const options = {
   //   // passing the client secret obtained from the server

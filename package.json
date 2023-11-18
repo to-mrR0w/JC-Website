@@ -23,6 +23,7 @@
     "firebase": "^10.5.0",
     "phosphor": "^0.7.1",
     "phosphor-react": "^1.4.1",
+    "process": "^0.11.10",
     "react": "^18.2.0",
     "react-auth-form": "^1.0.11",
     "react-bootstrap": "^2.9.1",

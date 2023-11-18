@@ -1,8 +1,9 @@
 // eslint-disable-next-line no-undef
 require("dotenv").config();
 
-console.log(process.env);
-const stripe = require("stripe")(process.env.SECRET);
+const stripe = require("stripe")(
+  "sk_test_51ODE6HLXiSop3zWmPlvZKJUv9A73rr7cRfyZnpdxKPx8tp8ChUhFyobD2dqi1LUzR2XojeviHIe92nY3g320VMJ100bvNR8aOq",
+);
 
 // eslint-disable-next-line no-undef, no-unused-vars
 exports.handler = async function (event, context) {
