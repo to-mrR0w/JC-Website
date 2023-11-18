@@ -1,5 +1,4 @@
 function ImageAboutUs({ data }) {
-  console.log(data);
   return (
     <li className="text-center">
       <img src={data.image} alt={`image/${data.name}`} />

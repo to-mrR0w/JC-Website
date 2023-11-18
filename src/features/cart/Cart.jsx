@@ -3,10 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { ShoppingCart } from "phosphor-react";
 import { useSelector } from "react-redux";
-import { getTotalCartPrice, getTotalCartQuantity } from "./cartSlice";
-import getStripe from "../../../lib/getStripe";
-// Add this import at the top of your App.jsx file if it's not already there
-import process from "process";
+import { getTotalCartPrice } from "./cartSlice";
 
 const H1 = styled.h1`
   font-weight: 600;
@@ -21,24 +18,6 @@ function Cart() {
   const DATA = useSelector((state) => state.cart.cart);
   const navigate = useNavigate();
   // const totalprice = useSelector(getTotalCartPrice);
-  const quantity = useSelector(getTotalCartQuantity);
-
-  async function handleCheckout() {
-    const stripe = await getStripe();
-    const { error } = await stripe.redirectToCheckout({
-      lineItems: [
-        {
-          price: process.env.NEXT_PUBLIC_STRIPE_PRICE_ID,
-          quantity: quantity,
-        },
-      ],
-      mode: " one-time",
-      successUrl: `/success`,
-      cancelUrl: `/cancel`,
-      customerEmail: `${email}`,
-    });
-    console.warn(error.message);
-  }
 
   return (
     <>
@@ -69,7 +48,7 @@ function Cart() {
               {" "}
               Continue Shopping{" "}
             </button>
-            <button onClick={handleCheckout}> Checkout</button>
+            <button onClick={() => navigate("/payment")}> Checkout</button>
           </div>
         </div>
       ) : (

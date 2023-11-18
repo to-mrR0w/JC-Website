@@ -24,11 +24,7 @@ import { loadStripe } from "@stripe/stripe-js";
 // import { loadStripe } from "@stripe/stripe-js";
 // const stripePromise = loadStripe("pk_test_mY9dmGCWnQgKn04SrNtHCjNJ");
 import { Elements } from "@stripe/react-stripe-js";
-import Checkout from "./pages/Checkout/Checkout";
-import PrivateRoute from "./pages/PrivateRoute/PrivateRoute";
-import Payment from "./pages/Checkout/Payment";
-// Add this import at the top of your App.jsx file if it's not already there
-import process from "process";
+import StripeBuyButton from "./pages/Checkout/Payment";
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
@@ -49,7 +45,8 @@ import process from "process";
 //     ],
 //   },
 // ]);
-const stripePromise = loadStripe(process.env.PUBLIC ?? "");
+console.log(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
 function App() {
   // const options = {
   //   // passing the client secret obtained from the server
@@ -107,18 +104,17 @@ function App() {
                   </Route>
                   {/* <Route path="/register" element={<Signup />} />
                 <Route path="/login" element={<LogIn />} /> */}
-                  <Route path="/payment" element={<Payment />} />
-                  <Route path="checkout" element={<></>} />
                   <Route
-                    path="/checkout"
+                    path="checkout"
                     element={
-                      <PrivateRoute
-                        path="/checkout"
-                        redirectTo="/"
-                        element={<Checkout />}
-                      />
+                      <>
+                        <Elements stripe={stripePromise}>
+                          <StripeBuyButton buyButtonId="buy_btn_1ODvewFyzy3qx0t5wng51CLy" />
+                        </Elements>
+                      </>
                     }
                   />
+
                   <Route path="*" element={<Error />} />
                 </Routes>
               </Elements>

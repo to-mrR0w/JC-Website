@@ -1,38 +1,33 @@
-import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+// components/StripeBuyButton.js
 
-const Payment = () => {
+import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
+
+// eslint-disable-next-line no-unused-vars
+const StripeBuyButton = ({ buyButtonId }) => {
   const stripe = useStripe();
   const elements = useElements();
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handlePayment = async () => {
+    // Create a PaymentMethod using the card element and other information
+    const { paymentMethod, error } = await stripe.createPaymentMethod({
+      type: "card",
+      card: elements.getElement(CardElement),
+    });
 
-    if (!stripe || !elements) {
-      return;
-    }
-
-    const cardElement = elements.getElement(CardElement);
-
-    if (cardElement) {
-      const { error, paymentMethod } = await stripe.createPaymentMethod({
-        type: "card",
-        card: cardElement,
-      });
-
-      if (!error) {
-        console.log(paymentMethod);
-      }
+    if (error) {
+      console.error(error);
+    } else {
+      // Send the paymentMethod.id to your server for further processing
+      console.log(paymentMethod.id);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div>
       <CardElement />
-      <button type="submit" disabled={!stripe}>
-        Pay
-      </button>
-    </form>
+      <button onClick={handlePayment}>Pay</button>
+    </div>
   );
 };
 
-export default Payment;
+export default StripeBuyButton;
