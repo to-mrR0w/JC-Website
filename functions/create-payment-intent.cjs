@@ -1,4 +1,5 @@
 // eslint-disable-next-line no-undef
+require("dotenv").config();
 const stripe = require("stripe")(process.env.SECRET);
 
 // eslint-disable-next-line no-undef, no-unused-vars
