@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { ShopContext } from "../context/ShopContext";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  addItem,
   getCurrQuantityById,
   increaseItemQuantity,
 } from "../features/cart/cartSlice";
@@ -57,23 +56,30 @@ function Produkte(props) {
         <>
           <button
             key={`Add${id}`}
-            onClick={(e) => {
-              e.preventDefault();
-              const newItem = {
-                cartId: id,
-                name: name,
-                quantity: 1,
-                productImg: productImg,
-                unitPrice: price,
-                totalPrice: price * 1,
-              };
-              dispatch(addItem(newItem));
-            }}
+            // onClick={(e) => {
+            //   e.preventDefault();
+            //   const newItem = {
+            //     cartId: id,
+            //     name: name,
+            //     quantity: 1,
+            //     productImg: productImg,
+            //     unitPrice: price,
+            //     totalPrice: price * 1,
+            //   };
+            //   dispatch(addItem(newItem));
+            // }}
             className={`${
               cartItemsAmount > 0 ? "bg-slate-600 text-white" : ""
             } addToCartBttn border border-gray-700 px-4 py-2 rounded-lg mt-4 hover:bg-gray-700 hover:text-white  cursor-pointer`}
           >
-            Hinzufügen zum Einkaufwagen
+            <a
+              href="https://buy.stripe.com/test_fZe4hE8CydEw8U06oq?locale=de"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Pay
+            </a>
+
             {cartItemsAmount > 0 && <>({cartItemsAmount})</>}
           </button>
         </>

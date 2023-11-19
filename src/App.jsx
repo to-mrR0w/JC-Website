@@ -24,7 +24,6 @@ import { loadStripe } from "@stripe/stripe-js";
 // import { loadStripe } from "@stripe/stripe-js";
 // const stripePromise = loadStripe("pk_test_mY9dmGCWnQgKn04SrNtHCjNJ");
 import { Elements } from "@stripe/react-stripe-js";
-import StripeBuyButton from "./pages/Checkout/Payment";
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
@@ -103,17 +102,7 @@ function App() {
                     />
                   </Route>
                   {/* <Route path="/register" element={<Signup />} />
-                <Route path="/login" element={<LogIn />} /> */}
-                  <Route
-                    path="checkout"
-                    element={
-                      <>
-                        <Elements stripe={stripePromise}>
-                          <StripeBuyButton buyButtonId="buy_btn_1ODvewFyzy3qx0t5wng51CLy" />
-                        </Elements>
-                      </>
-                    }
-                  />
+                <Route path="/login" element={<npmLogIn />} /> */}
 
                   <Route path="*" element={<Error />} />
                 </Routes>
