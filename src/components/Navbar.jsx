@@ -18,7 +18,7 @@ function Navbar() {
             />
           </Link>
         </div>
-        <div className="md:flex md:items-center md:ml-4 md:gap-16">
+        <div className="sm:flex md:items-center md:ml-4 sm:gap-16">
           <Link className="nav-link md:ml-4" to="/JC-Website/">
             Home
           </Link>

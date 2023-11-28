@@ -3,7 +3,7 @@ import Footer from "../components/Footer";
 function Home() {
   return (
     <>
-      <div className="wrapText flex flex-col md:flex-row overflow-auto">
+      <div className="wrapText flex flex-col md:flex-row overflow-auto ">
         <section className="text md:w-1/2 md:pr-4 overflow-auto">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
