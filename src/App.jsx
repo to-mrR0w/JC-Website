@@ -20,10 +20,8 @@ import { ShopContextProvider } from "./context/ShopContext";
 import { IconContext } from "phosphor-react";
 import { MantineProvider } from "@mantine/core";
 import { Route, Routes } from "react-router-dom";
-import { loadStripe } from "@stripe/stripe-js";
 // import { loadStripe } from "@stripe/stripe-js";
 // const stripePromise = loadStripe("pk_test_mY9dmGCWnQgKn04SrNtHCjNJ");
-import { Elements } from "@stripe/react-stripe-js";
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
@@ -44,8 +42,6 @@ import { Elements } from "@stripe/react-stripe-js";
 //     ],
 //   },
 // ]);
-console.log(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
-const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
 function App() {
   // const options = {
   //   // passing the client secret obtained from the server
@@ -81,32 +77,24 @@ function App() {
           >
             <FirebaseContext>
               {" "}
-              <Elements stripe={stripePromise}>
-                <Routes>
-                  <Route element={<AppLayout />}>
-                    <Route index element={<Home />} />
-                    <Route index exact path="/JC-Website/" element={<Home />} />
-                    <Route
-                      path="/JC-Website/supporter"
-                      element={<Supporter />}
-                    />
-                    <Route path="/JC-Website/cart" element={<Cart />} />
-                    <Route
-                      path="/JC-Website/products"
-                      element={<Products />}
-                    ></Route>
-                    <Route path="/JC-Website/about-us" element={<About />} />
-                    <Route
-                      path="/JC-Website/impressum"
-                      element={<Impressum />}
-                    />
-                  </Route>
-                  {/* <Route path="/register" element={<Signup />} />
+              <Routes>
+                <Route element={<AppLayout />}>
+                  <Route index element={<Home />} />
+                  <Route index exact path="/JC-Website/" element={<Home />} />
+                  <Route path="/JC-Website/supporter" element={<Supporter />} />
+                  <Route path="/JC-Website/cart" element={<Cart />} />
+                  <Route
+                    path="/JC-Website/products"
+                    element={<Products />}
+                  ></Route>
+                  <Route path="/JC-Website/about-us" element={<About />} />
+                  <Route path="/JC-Website/impressum" element={<Impressum />} />
+                </Route>
+                {/* <Route path="/register" element={<Signup />} />
                 <Route path="/login" element={<npmLogIn />} /> */}
 
-                  <Route path="*" element={<Error />} />
-                </Routes>
-              </Elements>
+                <Route path="*" element={<Error />} />
+              </Routes>
             </FirebaseContext>
           </IconContext.Provider>
         </ShopContextProvider>

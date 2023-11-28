@@ -1,49 +1,64 @@
 function Impressum() {
   return (
-    <div className="text-center ">
-      <h2>Impressum der Junior Company EasyCharge</h2>
-      <div className="flex flex-col space-x-7  text-center justify-center">
+    <div className="bg-white p-8 rounded-lg shadow-md max-w-screen-md mx-auto my-8  ">
+      <h2 className="text-3xl font-semibold mb-6 text-center">
+        Impressum der Junior Company EasyCharge
+      </h2>
+      <div className="text-left space-y-4">
         <div>
-          <strong>Adresse:</strong> [Name des Verantwortlichen], [Musterstraße
-          123], [PLZ Ort]
+          <strong>Adresse:</strong> EasyCharge Junior Company, Musterstraße 123,
+          12345 Musterstadt
         </div>
 
         <div>
           <strong>Kontakt:</strong>
           <br />
-          Telefon: [Telefonnummer]
+          Telefon: +43 123 456 789
           <br />
-          E-Mail: <a href={`mailto:[E-Mail-Adresse]`}>{`[E-Mail-Adresse]`}</a>
+          E-Mail:{" "}
+          <a
+            href="mailto:office@easycharge-jc.com"
+            className="text-blue-500 hover:underline"
+          >
+            office@easycharge-jc.com
+          </a>
         </div>
 
         <p>
-          <strong>Vertretungsberechtigte:</strong> [Name des Geschäftsführers
-          oder der vertretungsberechtigten Person]
+          <strong>Vertretungsberechtigte:</strong> Max Mustermann
+          (Geschäftsführer)
         </p>
 
         {/* Weitere Informationen hier einfügen, wie Register, Umsatzsteuer-Identifikationsnummer, Aufsichtsbehörde, etc. */}
 
         <p>
-          <strong>Verantwortlich für den Inhalt:</strong> [Name des
-          Verantwortlichen]
+          <strong>Firmenbuch:</strong> Handelsgericht Musterstadt, FN 123456a
+          <br />
+          <strong>Umsatzsteuer-Identifikationsnummer:</strong> ATU 12345678
+          <br />
+          <strong>Aufsichtsbehörde:</strong> Bezirkshauptmannschaft Musterstadt
+        </p>
+
+        <p>
+          <strong>Verantwortlich für den Inhalt:</strong> Max Mustermann
         </p>
 
         {/* Haftungsausschluss */}
         <p>
           <strong>Haftungsausschluss:</strong> Die Informationen auf dieser
           Website dienen nur allgemeinen Informationszwecken. Die Junior Company
-          [Firmenname] übernimmt keine Gewähr für die Richtigkeit,
-          Vollständigkeit und Aktualität der bereitgestellten Informationen.
+          EasyCharge übernimmt keine Gewähr für die Richtigkeit, Vollständigkeit
+          und Aktualität der bereitgestellten Informationen.
         </p>
 
         {/* Urheberrecht */}
         <p>
-          <strong>Urheberrecht:</strong> Die durch die Junior Company
-          [Firmenname] erstellten Inhalte und Werke auf dieser Website
-          unterliegen dem österreichischen Urheberrecht. Die Vervielfältigung,
-          Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der
-          Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des
-          jeweiligen Autors bzw. Erstellers.
+          <strong>Urheberrecht:</strong> Die durch die Junior Company EasyCharge
+          erstellten Inhalte und Werke auf dieser Website unterliegen dem
+          österreichischen Urheberrecht. Die Vervielfältigung, Bearbeitung,
+          Verbreitung und jede Art der Verwertung außerhalb der Grenzen des
+          Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen
+          Autors bzw. Erstellers.
         </p>
 
         {/* Datenschutz */}
@@ -63,6 +78,7 @@ function Impressum() {
             href="https://ec.europa.eu/consumers/odr/"
             target="_blank"
             rel="noopener noreferrer"
+            className="text-blue-500 hover:underline"
           >
             https://ec.europa.eu/consumers/odr/
           </a>{" "}
