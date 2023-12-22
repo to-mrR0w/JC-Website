@@ -7,10 +7,7 @@ function Navbar() {
     <>
       <nav className="flex flex-col md:flex-row items-center justify-between p-4 bg-gray-800 text-white">
         <div className="flex items-center">
-          <Link
-            to="/JC-Website/"
-            className="ml-2 text-xl font-bold flex items-center"
-          >
+          <Link to="/JC-Website/" className="ml-2 font-bold flex items-center">
             <img
               src="/Logo.jpeg"
               alt="Logo"
@@ -18,7 +15,7 @@ function Navbar() {
             />
           </Link>
         </div>
-        <div className="sm:flex md:items-center md:ml-4 sm:gap-16">
+        <div className="sm:flex md:items-center md:ml-4 sm:gap-16 text-2xl mt-2">
           <Link className="nav-link md:ml-4" to="/JC-Website/">
             Home
           </Link>
@@ -32,7 +29,7 @@ function Navbar() {
             Impressum
           </Link>
         </div>
-        <div className="flex items-center">
+        <div className="md:flex items-center hidden">
           <Link className="nav-link md:ml-4" to="/JC-Website/cart">
             <ShoppingCart size={32} color="#eeeeee" />
             <Badge />
