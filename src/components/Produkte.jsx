@@ -26,7 +26,7 @@ function Produkte(props) {
   return (
     <div className="product bg-white border rounded-lg w-full md:w-96 p-6 m-4 flex flex-col justify-between shadow-lg">
       <img
-        className="mx-auto rounded-lg object-cover w-full h-48 md:h-56 lg:h-64"
+        className="mx-auto rounded-lg object-cover w-full h-60 md:h-56 lg:h-64"
         src={productImg}
         alt={`Picture: ${productImg}`}
       />
