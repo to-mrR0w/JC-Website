@@ -35,37 +35,40 @@ function Produkte(props) {
         <span className="text-lg md:text-xl font-semibold">{name}</span>
         <br />
         <span className="text-base md:text-lg text-gray-600">
-          <b>Preis: </b> {price}
+          <b>Preis:</b> {price}
         </span>
       </div>
-
-      {quantity > 0 ? (
-        // Render button to add to cart if quantity is greater than 0
-        <button
-          onClick={handleAddToCart}
-          className={`addToCartBttn border w-full ${
-            cartItemsAmount > 0
-              ? "bg-blue-500 text-white"
-              : "hover:bg-blue-500 hover:text-white"
-          } px-6 py-3 rounded-lg mt-4 transition-all`}
-        >
-          Hinzufügen zum Einkaufwagen{quantity > 0 && <>({quantity})</>}
-        </button>
-      ) : (
-        <Link
-          to="https://buy.stripe.com/test_fZe4hE8CydEw8U06oq?locale=de"
-          target="_blank"
-          rel="noreferrer"
-          className={`addToCartBttn border w-full ${
-            cartItemsAmount > 0
-              ? "bg-blue-500 text-white"
-              : "hover:bg-blue-500 hover:text-white"
-          } px-6 py-3 rounded-lg mt-4 transition-all text-center`}
-        >
-          <span>Pay</span>
-          {cartItemsAmount > 0 && <>({cartItemsAmount})</>}
-        </Link>
-      )}
+      <div className="flex justify-center">
+        {quantity > 0 ? (
+          // Render button to add to cart if quantity is greater than 0
+          <button
+            onClick={handleAddToCart}
+            className={`addToCartBttn border w-full ${
+              cartItemsAmount > 0
+                ? "bg-blue-500 text-white"
+                : "hover:bg-blue-500 hover:text-white"
+            } px-6 py-3 rounded-lg mt-4 transition-all`}
+          >
+            Hinzufügen zum Einkaufwagen{quantity > 0 && <>({quantity})</>}
+          </button>
+        ) : (
+          <>
+            <Link
+              to="https://buy.stripe.com/test_fZe4hE8CydEw8U06oq?locale=de"
+              target="_blank"
+              rel="noreferrer"
+              className={`addToCartBttn border w-[250px] ${
+                cartItemsAmount > 0
+                  ? "bg-blue-500 text-white"
+                  : "hover:bg-blue-500 hover:text-white"
+              } px-6 py-3 rounded-lg mt-4 transition-all text-center`}
+            >
+              <span>Pay</span>
+              {cartItemsAmount > 0 && <>({cartItemsAmount})</>}
+            </Link>
+          </>
+        )}
+      </div>
 
       <div className="content-details mt-4">
         <p className="font-semibold">Details:</p>
