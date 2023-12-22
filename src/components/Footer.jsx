@@ -2,17 +2,6 @@ import { InstagramLogo } from "phosphor-react";
 import styled from "styled-components";
 import { FaFacebook, FaLinkedin, FaMailchimp, FaTiktok } from "react-icons/fa";
 
-const StyledFooter = styled.footer`
-  background-color: #f5f5f5;
-  padding: 1rem;
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-`;
-
 // ... (rest of the component remains the same)
 
 const IconContainer = styled.span`
@@ -29,6 +18,17 @@ const StyledLink = styled.a`
     color: #2d3748;
   }
 `;
+const StyledFooter = styled.footer`
+  background-color: #f5f5f5;
+  padding: 1rem;
+  text-align: center;
+  position: relative; /* Änderung der Positionierung auf relative */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+`;
+
+// ... (rest of the component remains the same)
 
 function Footer() {
   return (
@@ -81,7 +81,7 @@ function Footer() {
             office@easycharge-jc.com
           </StyledLink>
         </p>
-      </IconContainer>
+      </IconContainer>{" "}
     </StyledFooter>
   );
 }
