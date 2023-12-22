@@ -30,6 +30,7 @@ function Produkte(props) {
         src={productImg}
         alt={`Picture: ${productImg}`}
       />
+
       <div className="description text-center mt-4">
         <span className="text-lg md:text-xl font-semibold">{name}</span>
         <br />
@@ -51,7 +52,6 @@ function Produkte(props) {
           Hinzufügen zum Einkaufwagen{quantity > 0 && <>({quantity})</>}
         </button>
       ) : (
-        // Render link to Stripe payment if quantity is 0
         <Link
           to="https://buy.stripe.com/test_fZe4hE8CydEw8U06oq?locale=de"
           target="_blank"
