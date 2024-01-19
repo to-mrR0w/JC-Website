@@ -60,7 +60,7 @@ function Footer() {
           target="_blank"
           rel="noreferrer"
         >
-          Follow on LinkedIn
+          Follow on TikTok
         </StyledLink>
       </IconContainer>{" "}
       <IconContainer>

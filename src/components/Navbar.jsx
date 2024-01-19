@@ -15,7 +15,7 @@ function Navbar() {
             />
           </Link>
         </div>
-        <div className="sm:flex md:items-center md:ml-4 sm:gap-16 text-2xl mt-2">
+        <div className="sm:flex md:items-center md:ml-2 sm:gap-16 text-2xl mt-2">
           <Link className="nav-link md:ml-4" to="/JC-Website/">
             Home
           </Link>

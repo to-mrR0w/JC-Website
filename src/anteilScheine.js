@@ -1,5 +1,5 @@
 export const stakeholder = {
   price: 10,
   total: 80,
-  taken: 29,
+  taken: 19,
 };
