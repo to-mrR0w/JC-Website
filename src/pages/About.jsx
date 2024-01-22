@@ -1,12 +1,13 @@
 import { stakeholder } from "../anteilScheine";
 import ImageAboutUs from "../components/ImageAboutUs";
 import { FOUNDERS } from "../products";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 function About() {
   return (
     <>
       <div className="bg-gray-100 p-8 md:p-16 mt-10 md:mt-20 mx-auto w-3/4 rounded-md shadow-lg">
-        {" "}
         <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Founders</h2>
         <ul className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-4">
           {FOUNDERS.map((person) => (
@@ -14,6 +15,13 @@ function About() {
           ))}
         </ul>
       </div>
+      {/* <span className="absolute left-1/2 bottom-80">
+        <FontAwesomeIcon
+          icon={faArrowDown}
+          size="2xl"
+          style={{ color: "#a3d3f1" }}
+        /> */}
+      {/* </span> */}
       <div className="flex justify-between flex-wrap">
         <span className="flex-1 ml-5  bg-slate-50 p-8 md:p-16 mt-6 md:mt-12 rounded-md shadow-lg overflow-y-auto z-10">
           {" "}

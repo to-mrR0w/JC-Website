@@ -5,13 +5,13 @@ import Badge from "./Badge";
 function Navbar() {
   return (
     <>
-      <nav className="flex flex-col md:flex-row items-center justify-between p-4 bg-gray-800 text-white">
+      <nav className="flex flex-col md:flex-row items-center justify-between p-4 bg-gray-800 text-white ">
         <div className="flex items-center">
           <Link to="/JC-Website/" className="ml-2 font-bold flex items-center">
             <img
               src="/Logo.jpeg"
               alt="Logo"
-              className="h-20 w-20 rounded-md object-cover mr-2"
+              className="h-16 w-16 rounded-md object-cover mr-2"
             />
           </Link>
         </div>
