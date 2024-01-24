@@ -14,7 +14,7 @@ function Navbar() {
           </Link>
         </div>
         <div className="mt-4 md:mt-0 md:flex-grow md:flex md:items-center md:justify-center">
-          <div className="flex flex-col md:flex-row md:items-center md:ml-2 md:gap-16 text-xl">
+          <div className="flex flex-col md:flex-row md:items-center md:ml-2 md:gap-16 text-2xl">
             <Link
               className="nav-link md:ml-4 mb-2 md:mb-0 hover:underline-offset-1 hover:underline"
               to="/JC-Website/"
