@@ -3,7 +3,6 @@ import ImageAboutUs from "../components/ImageAboutUs";
 import { FOUNDERS } from "../products";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
-
 function About() {
   return (
     <>
@@ -15,6 +14,8 @@ function About() {
           ))}
         </ul>
       </div>
+
+      <hr className="bg-gray-200 mt-3" />
       {/* <span className="absolute left-1/2 bottom-80">
         <FontAwesomeIcon
           icon={faArrowDown}
@@ -22,15 +23,15 @@ function About() {
           style={{ color: "#a3d3f1" }}
         /> */}
       {/* </span> */}
-      <div className="flex justify-between flex-wrap">
-        <span className="flex-1 ml-5  bg-slate-50 p-8 md:p-16 mt-6 md:mt-12 rounded-md shadow-lg overflow-y-auto z-10">
+      <div className="flex justify-between flex-wrap ">
+        <span className="flex-1 ml-5  bg-slate-50 p-8 md:p-16 mt-6 md:mt-12 rounded-md shadow-lg overflow-y-auto z-10 mb-14">
           {" "}
           <h2 className="text-2xl md:text-3xl font-bold mb-4">Achievements</h2>
           <ul className="list-disc text-base md:text-lg">
             <li>Gewinner der Entrepreneurship Week</li>
           </ul>
         </span>
-        <span className="flex-1 ml-5 mr-5 bg-slate-50 p-8 md:p-16 mt-6 md:mt-12 rounded-md shadow-lg overflow-y-auto z-10">
+        <span className="flex-1 ml-5 mr-5 bg-slate-50 p-8 md:p-16 mt-6 md:mt-12 rounded-md shadow-lg overflow-y-auto z-10 mb-14">
           {" "}
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
             Junior Company shares:

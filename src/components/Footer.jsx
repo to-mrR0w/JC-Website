@@ -32,7 +32,7 @@ const StyledFooter = styled.footer`
 
 function Footer() {
   return (
-    <StyledFooter className="mt-4">
+    <StyledFooter className="mt-10">
       <IconContainer>
         <InstagramLogo size={24} />
         <StyledLink
