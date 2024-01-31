@@ -8,7 +8,7 @@ function Home() {
         {/* <span className="text-center justify-center">
           <FaQrcode size={100} />
         </span> */}
-        <section className="text md:w-1/2 md:pr-4 overflow-auto">
+        <section className="text md:w-1/2 md:pr-4 overflow-auto text-2xl">
           LOREM IPSU LOREM IPSULOREM IPSULOREM IPSULOREM IPSULOREM IPSULOREM
           IPSULOREM IPSULOREM IPSULOREM IPSULOREM IPSULOREM IPSULOREM IPSULOREM
           IPSULOREM IPSULOREM IPSULOREM IPSULOREM IPSULOREM IPSULOREM IPSULOREM
