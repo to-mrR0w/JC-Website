@@ -1,22 +1,17 @@
 // import { FaQrcode } from " react-icons/fa";
 import Footer from "../components/Footer";
-import { gsap } from "gsap";
+// import { gsap } from "gsap";
 
-import { Flip } from "gsap/Flip";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import { TextPlugin } from "gsap/TextPlugin";
+// import { Flip } from "gsap/Flip";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+// import { TextPlugin } from "gsap/TextPlugin";
 
-gsap.registerPlugin(Flip, ScrollTrigger, ScrollToPlugin, TextPlugin);
+// gsap.registerPlugin(Flip, ScrollTrigger, ScrollToPlugin, TextPlugin);
 function Home() {
-  const spin = () => {
-    alert("Yo");
-  };
-  gsap.to(".image", {
-    duration: 1,
-    x: 100,
-    onComplete: () => alert("finsi"),
-  });
+  // const spin = () => {
+  //   alert("Yo");
+  // };
 
   return (
     <>
@@ -31,12 +26,7 @@ function Home() {
           IPSULOREM IPSULOREM IPSULOREM IPSULOREM IPSULOREM IPSULOREM IPSU{" "}
         </section>
         <div className="image md:w-1/2 mt-4 md:mt-0 overflow-auto">
-          <img
-            src="/forrest.jpg"
-            alt="Bild"
-            className="w-full h-auto"
-            onClick={spin}
-          />
+          <img src="/forrest.jpg" alt="Bild" className="w-full h-auto" />
         </div>
       </div>
       <Footer className="mt-auto" />
