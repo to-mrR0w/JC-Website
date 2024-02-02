@@ -1,3 +1,4 @@
+// import { FaQrcode } from " react-icons/fa";
 import Footer from "../components/Footer";
 import { gsap } from "gsap";
 
@@ -20,7 +21,10 @@ function Home() {
   return (
     <>
       <div className="wrapText flex flex-col md:flex-row overflow-auto">
-        <section className="text md:w-1/2 md:pr-4 overflow-auto">
+        {/* <span className="text-center justify-center">
+          <FaQrcode size={100} />
+        </span> */}
+        <section className="text md:w-1/2 md:pr-4 overflow-auto text-2xl">
           LOREM IPSU LOREM IPSULOREM IPSULOREM IPSULOREM IPSULOREM IPSULOREM
           IPSULOREM IPSULOREM IPSULOREM IPSULOREM IPSULOREM IPSULOREM IPSULOREM
           IPSULOREM IPSULOREM IPSULOREM IPSULOREM IPSULOREM IPSULOREM IPSULOREM

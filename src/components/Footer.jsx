@@ -2,37 +2,43 @@ import { InstagramLogo } from "phosphor-react";
 import styled from "styled-components";
 import { FaFacebook, FaLinkedin, FaMailchimp, FaTiktok } from "react-icons/fa";
 
-// ... (rest of the component remains the same)
-
-const IconContainer = styled.span`
+const IconContainer = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+
+  svg {
+    margin-bottom: 0.5rem;
+  }
 `;
 
 const StyledLink = styled.a`
   font-weight: 600;
   color: #4a5568;
+  transition: color 0.3s ease;
 
   &:hover {
     color: #2d3748;
   }
 `;
+
 const StyledFooter = styled.footer`
   background-color: #f5f5f5;
-  padding: 1rem;
+  padding: 2rem;
   text-align: center;
-  position: relative; /* Änderung der Positionierung auf relative */
-  width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
 `;
-
-// ... (rest of the component remains the same)
 
 function Footer() {
   return (
-    <StyledFooter className="mt-4">
+    <StyledFooter>
       <IconContainer>
         <InstagramLogo size={24} />
         <StyledLink
@@ -52,7 +58,7 @@ function Footer() {
         >
           Follow on LinkedIn
         </StyledLink>
-      </IconContainer>{" "}
+      </IconContainer>
       <IconContainer>
         <FaTiktok size={24} />
         <StyledLink
@@ -62,7 +68,7 @@ function Footer() {
         >
           Follow on TikTok
         </StyledLink>
-      </IconContainer>{" "}
+      </IconContainer>
       <IconContainer>
         <FaFacebook size={24} />
         <StyledLink
@@ -81,7 +87,7 @@ function Footer() {
             office@easycharge-jc.com
           </StyledLink>
         </p>
-      </IconContainer>{" "}
+      </IconContainer>
     </StyledFooter>
   );
 }

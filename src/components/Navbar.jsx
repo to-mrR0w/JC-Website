@@ -1,13 +1,11 @@
 import { Link } from "react-router-dom";
-import { ShoppingCart } from "phosphor-react";
-import Badge from "./Badge";
 
 function Navbar() {
   return (
     <>
-      <nav className="flex flex-col md:flex-row items-center justify-between p-4 bg-gray-800 text-white ">
+      <nav className="flex flex-col md:flex-row items-center justify-between p-4 bg-gray-800 text-white">
         <div className="flex items-center">
-          <Link to="/JC-Website/" className="ml-2 font-bold flex items-center">
+          <Link to="/JC-Website/" className="font-bold flex items-center">
             <img
               src="/Logo.jpeg"
               alt="Logo"
@@ -15,25 +13,34 @@ function Navbar() {
             />
           </Link>
         </div>
-        <div className="sm:flex md:items-center md:ml-2 sm:gap-16 text-2xl mt-2">
-          <Link className="nav-link md:ml-4" to="/JC-Website/">
-            Home
-          </Link>
-          <Link className="nav-link md:ml-4" to="/JC-Website/products">
-            Products
-          </Link>
-          <Link className="nav-link md:ml-4" to="/JC-Website/about-us">
-            About Us
-          </Link>
-          <Link className="nav-link md:ml-4" to="/JC-Website/impressum">
-            Impressum
-          </Link>
-        </div>
-        <div className="md:flex items-center hidden">
-          <Link className="nav-link md:ml-4" to="/JC-Website/cart">
-            <ShoppingCart size={32} color="#eeeeee" />
-            <Badge />
-          </Link>
+        <div className="mt-4 md:mt-0 md:flex-grow md:flex md:items-center md:justify-center">
+          <div className="flex flex-col md:flex-row md:items-center md:ml-2 md:gap-16 text-2xl">
+            <Link
+              className="nav-link md:ml-4 mb-2 md:mb-0 hover:underline-offset-1 hover:underline"
+              to="/JC-Website/"
+            >
+              Home
+            </Link>
+            <Link
+              className="nav-link md:ml-4 mb-2 md:mb-0 hover:underline-offset-1 hover:underline"
+              to="/JC-Website/products"
+            >
+              Product
+            </Link>
+            <Link
+              className="nav-link md:ml-4 mb-2 md:mb-0 hover:underline-offset-1 hover:underline"
+              to="/JC-Website/about-us"
+            >
+              About Us
+            </Link>
+            <Link
+              className="nav-link md:ml-4 mb-2 md:mb-0 hover:underline-offset-8 hover:underline"
+              to="/JC-Website/impressum"
+            >
+              Impressum
+            </Link>
+          </div>
+          {/* Removed shopping cart section */}
         </div>
       </nav>
     </>
