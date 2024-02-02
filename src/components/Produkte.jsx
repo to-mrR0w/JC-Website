@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 function Produkte(props) {
   const { data } = props;
-  const { name, productImg, price, id } = data;
+  const { name, productImg, price, id, productPay } = data;
 
   // React context and Redux setup
   const { cartItems } = useContext(ShopContext);
@@ -54,7 +54,7 @@ function Produkte(props) {
         ) : (
           <>
             <Link
-              to="https://buy.stripe.com/test_fZe4hE8CydEw8U06oq?locale=de"
+              to={`${productPay}`}
               target="_blank"
               rel="noreferrer"
               className={`addToCartBttn border w-[250px] ${

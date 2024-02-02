@@ -4,6 +4,8 @@ export const DATA = [
     name: "EasyCharge",
     price: 29.99,
     productImg: "/Product.jpeg",
+    productPay: "https://buy.stripe.com/00gbM6e9UdrYdpecMM",
+    // productPay: "https://buy.stripe.com/test_fZe4hE8CydEw8U06oq",
   },
 ];
 export const FOUNDERS = [

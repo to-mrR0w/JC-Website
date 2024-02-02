@@ -5,4 +5,8 @@ export default {
     extend: {},
   },
   plugins: [],
+  colors: {
+    white: "#FFFFFF",
+    black: "#000",
+  },
 };
