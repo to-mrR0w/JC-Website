@@ -29,6 +29,8 @@ function About() {
           <h2 className="text-2xl md:text-3xl font-bold mb-4">Achievements</h2>
           <ul className="list-disc text-base md:text-lg">
             <li>Gewinner der Entrepreneurship Week</li>
+            <li>Teilnehmer im ChangeMaker Programm</li>
+            <li>Teilnahme an der internationalen JA-Handelsmesse</li>
           </ul>
         </span>
         <span className="flex-1 ml-5 mr-5 bg-slate-50 p-8 md:p-16 mt-6 md:mt-12 rounded-md shadow-lg overflow-y-auto z-10 mb-14">
