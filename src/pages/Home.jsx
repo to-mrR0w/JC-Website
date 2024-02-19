@@ -16,7 +16,7 @@ function Home() {
         <section className="text md:w-1/2 md:pr-4 overflow-auto text-2xl">
           <b>UNSER,</b> Projekt ist eine wiederverwendbare Tasche inkl.
           Powerbank induktion die in hauptsächlich größeren Taschen sowie auch
-          in Rucksäcken leicht integriert werden können.
+          in Rucksäcken leicht integriert werden kann.
           <br />
         </section>
       </div>
