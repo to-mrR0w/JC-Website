@@ -18,7 +18,6 @@ function Home() {
           Powerbank induktion die in hauptsächlich größeren Taschen sowie auch
           in Rucksäcken leicht integriert werden können.
           <br />
-          <b>Wieso</b> eigentlich
         </section>
       </div>
 
