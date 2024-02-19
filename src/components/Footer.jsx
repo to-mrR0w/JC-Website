@@ -31,8 +31,8 @@ const StyledFooter = styled.footer`
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  position: absolute;
-  bottom: 10px;
+  position: static;
+  bottom: 0px;
   width: 100%;
 `;
 
