@@ -9,6 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 function Home() {
   useEffect(() => {
     // Animation for the initial appearance of elements
+
     gsap.fromTo(
       ".text",
       { opacity: 0.5, y: -100 },
@@ -47,9 +48,13 @@ function Home() {
           unsere Ausbildungen bekommen wir eine einzigartige Chance. Unsere
           Kenntnisse zu erweitern und gelerntes Wissen einzusetzen.
         </section>
-        <div className="image md:w-1/3 mt-4 md:mt-0 overflow-auto">
+        <div className="image  md:w-1/3 mt-4 md:mt-0 overflow-auto">
           {/* Image container */}
-          <img src="/forrest.jpg" alt="Bild" className="w-full h-auto" />
+          <img
+            src="/80c6b5b3-4713-4b02-a80f-0130664c74af.JPG"
+            alt="Bild"
+            className="w-full h-auto "
+          />
         </div>
         <section className="text md:w-1/2 md:pr-4 overflow-auto text-2xl">
           <b>UNSER,</b> Projekt ist eine wiederverwendbare Tasche inkl.

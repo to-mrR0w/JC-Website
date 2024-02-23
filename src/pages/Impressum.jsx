@@ -6,41 +6,50 @@ function Impressum() {
       </h2>
       <div className="text-left space-y-4">
         <div>
-          <strong>Adresse:</strong> EasyCharge Junior Company, Musterstraße 123,
-          12345 Musterstadt
+          <strong>Adresse:</strong> HTL Mödling,Technikerstraße 1/5, 2340
+          Mödling
         </div>
 
         <div>
           <strong>Kontakt:</strong>
           <br />
-          Telefon: +43 123 456 789
+          Telefon:{" "}
+          <a
+            href={`tel:${+4369917131997}`}
+            className="text-blue-600 hover:text-orange-300"
+          >
+            <span aria-label="+43 69917131997 anrufen">+43 69917131997</span>
+          </a>
           <br />
           E-Mail:{" "}
           <a
             href="mailto:office@easycharge-jc.com"
-            className="text-blue-500 hover:underline"
+            className="text-blue-600 hover:underline"
           >
             office@easycharge-jc.com
           </a>
         </div>
 
         <p>
-          <strong>Vertretungsberechtigte:</strong> Max Mustermann
-          (Geschäftsführer)
+          <strong>Vertretungsberechtigte:</strong> David Weninger
         </p>
 
         {/* Weitere Informationen hier einfügen, wie Register, Umsatzsteuer-Identifikationsnummer, Aufsichtsbehörde, etc. */}
 
         <p>
-          <strong>Firmenbuch:</strong> Handelsgericht Musterstadt, FN 123456a
+          <strong>Firmenbuch:</strong> ??
           <br />
-          <strong>Umsatzsteuer-Identifikationsnummer:</strong> ATU 12345678
+          <strong>Umsatzsteuer-Identifikationsnummer:</strong> ???
           <br />
-          <strong>Aufsichtsbehörde:</strong> Bezirkshauptmannschaft Musterstadt
+          <strong>Aufsichtsbehörde:</strong>
+          <br /> Junior Achievement Austria
+          <br />
+          Unternehmerische Praxis- und Kompetenzbildung
         </p>
 
         <p>
-          <strong>Verantwortlich für den Inhalt:</strong> Max Mustermann
+          <strong>Verantwortlich für den Inhalt:</strong> David Weninger, Tobias
+          Schütz, Laurens Karner, Marcel Schmiedjell
         </p>
 
         {/* Haftungsausschluss */}

@@ -23,11 +23,13 @@ function About() {
           style={{ color: "#a3d3f1" }}
         /> */}
       {/* </span> */}
-      <div className="flex justify-between flex-wrap ">
-        <span className="flex-1 ml-5  bg-slate-50 p-8 md:p-16 mt-6 md:mt-12 rounded-md shadow-lg overflow-y-auto z-10 mb-14">
+      <div className="flex md:justify-between md:flex-wrap flex-col flex-wrap ">
+        <span className="flex-1 ml-5  bg-slate-50 p-8 md:p-16 mt-6 md:mt-12 rounded-md shadow-lg overflow-y-auto z-10 md:mb-14 ">
           {" "}
           <h2 className="text-2xl md:text-3xl font-bold mb-4">Achievements</h2>
           <ul className="list-disc text-base md:text-lg">
+            <li>Gewinner der Entrepreneurship Week</li>
+            <li>Gewinner der Entrepreneurship Week</li>
             <li>Gewinner der Entrepreneurship Week</li>
           </ul>
         </span>
