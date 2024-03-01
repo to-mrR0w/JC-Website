@@ -42,7 +42,9 @@ function About() {
             <li>Total: {stakeholder.total}</li>
             <li>Taken: {stakeholder.taken}</li>
             <p className="text-center">
-              <strong>{(stakeholder.taken / stakeholder.total) * 100} %</strong>
+              <strong>
+                {((stakeholder.taken / stakeholder.total) * 100).toFixed(2)} %
+              </strong>
             </p>
             <progress
               className="rounded-md w-1/2 flex mx-auto"
