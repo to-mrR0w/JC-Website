@@ -73,7 +73,7 @@ function Produkte(props) {
       <div className="content-details mt-4">
         <p className="font-semibold">Details:</p>
         <ul className="list-disc list-inside text-gray-700">
-          <li>Verschiedene Arten: Leder, Stoff</li>
+          <li>Verschiedene Arten: Kunstleder in Farben Blau, Schwarz, Grau</li>
           <li>inkl. Induktionspowerbank</li>
           <li>inkl. Klettverschlüsse</li>
         </ul>
