@@ -29,7 +29,9 @@ function Impressum() {
           </a>
         </div>
 
-        <p>Geschäftsführer: David Weninger </p>
+        <p>
+          <strong>Geschäftsführer:</strong> David Weninger{" "}
+        </p>
 
         <p>
           {/* <strong>Firmenbuch:</strong> ??? <br />
