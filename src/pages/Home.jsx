@@ -48,7 +48,7 @@ function Home() {
           unsere Ausbildungen bekommen wir eine einzigartige Chance. Unsere
           Kenntnisse zu erweitern und gelerntes Wissen einzusetzen.
         </section>
-        <div className="image  md:w-1/3 mt-4 md:mt-0 overflow-auto">
+        <div className="img  md:w-1/3 mt-4 md:mt-0 overflow-auto">
           {/* Image container */}
           <img
             src="/80c6b5b3-4713-4b02-a80f-0130664c74af.JPG"
@@ -74,7 +74,7 @@ function Home() {
           nicht mehr . Unsere Produkte bieten Komfort, Zuverlässigkeit und
           Umweltfreundlichkeit in einem.
         </section>
-        <div className="image md:w-1/2 mt-4 md:mt-0 overflow-auto">
+        <div className="img md:w-1/2 mt-4 md:mt-0 overflow-auto">
           {/* Image container */}
           <img src="/forrest.jpg" alt="Bild" className="w-full h-auto" />
         </div>
