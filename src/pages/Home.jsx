@@ -43,6 +43,7 @@ function Home() {
   return (
     <>
       <div className="wrapText flex flex-col md:flex-row overflow-auto">
+        {/*Section 1 ; Wer wir sind und wie wir dazu gekommen sind */}
         <section className="text md:w-1/2 md:pr-4 overflow-auto text-2xl">
           <b>HEY,</b> wir sind eine Junior Company namens EasyCharge infolge
           unsere Ausbildungen bekommen wir eine einzigartige Chance. Unsere
@@ -56,6 +57,8 @@ function Home() {
             className="w-full h-auto "
           />
         </div>
+
+        {/*Section 2 ; Unser Produkt was enthalten ist*/}
         <section className="text md:w-1/2 md:pr-4 overflow-auto text-2xl">
           <b>UNSER,</b> Projekt ist eine wiederverwendbare Tasche inkl.
           Powerbank Induktion, die hauptsächlich in größeren Taschen sowie auch
@@ -65,6 +68,7 @@ function Home() {
       </div>
 
       <div className="wrapText flex flex-col md:flex-row overflow-auto">
+        {/*Section 3 ;Wieso wir EasyCharge gegründet haben */}
         <section className="textWieso md:w-1/2 md:pr-4 overflow-auto text-2xl">
           <b>Wieso EasyCharge?</b> Wir haben EasyCharge gegründet, um eine
           wiederverwendbare Lösung für den täglichen Bedarf und/oder

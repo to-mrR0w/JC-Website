@@ -32,7 +32,10 @@ function ImageAboutUs({ data }) {
   }, [data.id]); // Add data.id as a dependency to re-run the effect when the ID changes
 
   return (
-    <li id={`${data.class}`} className="text-center flex flex-col items-center">
+    <li
+      id={`${data.class}`}
+      className="text-center flex flex-col items-center "
+    >
       <img
         className="rounded-md w-44 h-60"
         src={data.image}

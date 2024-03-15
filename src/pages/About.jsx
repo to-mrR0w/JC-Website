@@ -8,7 +8,7 @@ function About() {
     <>
       <div className="bg-gray-100 p-8 md:p-16 mt-10 md:mt-20 mx-auto w-3/4 rounded-md shadow-lg">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Founders</h2>
-        <ul className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-4">
+        <ul className="flex flex-col md:flex-row justify-between space-y-4 md:space-y-0 md:space-x-4 ">
           {FOUNDERS.map((person) => (
             <ImageAboutUs key={person.id} data={person} />
           ))}
