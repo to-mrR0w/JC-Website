@@ -45,7 +45,7 @@ export const FOUNDERS = [
     id: 5,
     name: "Radic Daniel",
     image: "/5.jpg",
-    job: "Sales",
+    job: "Sales and Social Media",
   },
 ];
 {

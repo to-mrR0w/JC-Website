@@ -19,19 +19,19 @@ function Navbar() {
               className="nav-link md:ml-4 mb-2 md:mb-0 hover:underline-offset-1 hover:underline"
               to="/JC-Website/"
             >
-              Home
+              Startseite
             </Link>
             <Link
               className="nav-link md:ml-4 mb-2 md:mb-0 hover:underline-offset-1 hover:underline"
               to="/JC-Website/products"
             >
-              Product
+              Produkt
             </Link>
             <Link
               className="nav-link md:ml-4 mb-2 md:mb-0 hover:underline-offset-1 hover:underline"
               to="/JC-Website/about-us"
             >
-              About Us
+              Über uns
             </Link>
             <Link
               className="nav-link md:ml-4 mb-2 md:mb-0 hover:underline-offset-8 hover:underline"

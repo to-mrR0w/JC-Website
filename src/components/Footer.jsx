@@ -50,6 +50,7 @@ function Footer() {
         </StyledLink>
       </IconContainer>
       <IconContainer>
+        {/*LINKEDIN ICONCONTAINER*/}
         <FaLinkedin size={24} />
         <StyledLink
           href="https://www.linkedin.com/in/easycharge-jc-3a27802a0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app&original_referer=https%3A%2F%2Flinktr.ee%2F"
@@ -60,6 +61,7 @@ function Footer() {
         </StyledLink>
       </IconContainer>
       <IconContainer>
+        {/*TIKTOK ICONCONTAINER*/}
         <FaTiktok size={24} />
         <StyledLink
           href="https://www.tiktok.com/@easycharge_jc?_t=8hwana6xjfo&_r=1"
@@ -69,6 +71,8 @@ function Footer() {
           Follow on TikTok
         </StyledLink>
       </IconContainer>
+
+      {/*Facebook ICONCONTAINER*/}
       <IconContainer>
         <FaFacebook size={24} />
         <StyledLink
