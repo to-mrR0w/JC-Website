@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 function Produkte(props) {
   const quantity = 0;
   const { data } = props;
-  const { name, productImg, price, id, productPay } = data;
+  const { name, productImg, price, id, productPay, disabledd } = data;
 
   // React context and Redux setup
   // const { cartItems } = useContext(ShopContext);
@@ -61,7 +61,7 @@ function Produkte(props) {
         ) : (
           <>
             <Link
-              to={`${productPay}`}
+              to={`${disabledd ? "#" : productPay}`}
               target="_blank"
               rel="noreferrer"
               // className={`addToCartBttn border w-[250px] ${
@@ -70,7 +70,9 @@ function Produkte(props) {
               //     : "hover:bg-blue-500 hover:text-white"
               // } px-6 py-3 rounded-lg mt-4 transition-all text-center`}
               className={`addToCartBttn border w-[250px]
-               px-6 py-3 rounded-lg mt-4 transition-all text-center`}
+               hover:bg-blue-500 hover:text-white; px-6 py-3 rounded-lg mt-4 transition-all text-center ${
+                 disabledd && `bg-gray-300 hover:bg-gray-300`
+               }`}
             >
               <span>Pay</span>
               {/* {cartItemsAmount > 0 && <>({cartItemsAmount})</>} */}

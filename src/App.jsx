@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import AppLayout from "./pages/AppLayout";
 import Impressum from "./pages/Impressum";
 import Error from "./pages/Error";
+import NoProducts from "./pages/NoProdukts";
 // import ProtectedRoute from "./components/ProtectedRoute";
 // import Navbar from "./components/Navbar";
 // import Footer from "./components/Footer";
@@ -32,6 +33,7 @@ function App() {
               <Route path="/JC-Website/products" element={<Products />}></Route>
               <Route path="/JC-Website/about-us" element={<About />} />
               <Route path="/JC-Website/impressum" element={<Impressum />} />
+              <Route path="/JC-Website/nothing" element={<NoProducts />} />
             </Route>
             {/* <Route path="/register" element={<Signup />} />
                 <Route path="/login" element={<npmLogIn />} /> */}
